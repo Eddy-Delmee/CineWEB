@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{# bootstrap #}
+		<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+		{# Footer #}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+
+		{# CSS #}
+		<link rel="stylesheet" href="{{asset("css/style.css")}}">
+
+		{# FontFamilly #}
+
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+			{% block stylesheets %}
+		{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+			{% block javascripts %}
+		{{ encore_entry_script_tags('app') }}
+	{% endblock %}
+	</head>
+		<body>
+            
+            {# <Header> #}
+			<nav class="navbar navbar-expand-lg bg-light"> <div class="container-fluid">
+				<a class="navbar-brand">CINEWEB</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Acceuil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_news_index') }}">Actualités</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_movies_index') }}">Films</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_recommendations_index') }}">Recommendations</a>
+						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="{{ path('app_categories_index') }}">Genres</a>
+						</li>
+                        <li class="nav-item">
+							<a class="nav-link" href="{{ path('app_sessions_index') }}">Dates</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled">Disabled</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+        {# </Header> #}
+
+		{% block body %}{% endblock %}
+        
+        {# <Footer> #}
+		<div class="footer-clean">
+			<footer>
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-sm-4 col-md-3 item">
+							<h3>Services</h3>
+							<ul>
+								<li><a href="#">Web design</a></li>
+								<li><a href="#">Development</a></li>
+								<li><a href="#">Hosting</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-4 col-md-3 item">
+							<h3>About</h3>
+							<ul>
+								<li><a href="#">Company</a></li>
+								<li><a href="#">Team</a></li>
+								<li><a href="#">Legacy</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-4 col-md-3 item">
+							<h3>Careers</h3>
+							<ul>
+								<li><a href="#">Job openings</a></li>
+								<li><a href="#">Employee success</a></li>
+								<li><a href="#">Benefits</a></li>
+							</ul>
+						</div>
+						<div class="col-lg-3 item social">
+							<a href="#">
+								<i class="icon ion-social-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="icon ion-social-twitter"></i>
+							</a>
+							<a href="#">
+								<i class="icon ion-social-snapchat"></i>
+							</a>
+							<a href="#">
+								<i class="icon ion-social-instagram"></i>
+							</a>
+							<p class="copyright">CINEWEB © 2022</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+        {# </Footer> #}
+
+        {# Footer/script #}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+		{# bootstrap #}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+	</body>
+</html>
