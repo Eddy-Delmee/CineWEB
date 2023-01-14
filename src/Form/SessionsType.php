@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Movies;
 use App\Entity\Sessions;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SessionsType extends AbstractType
@@ -16,7 +18,11 @@ class SessionsType extends AbstractType
             ->add('hourMovie')
             ->add('dayMovie')
             ->add('idHall')
-            ->add('idMovie')
+            // ->add('idMovie')
+            ->add('idMovie', EntityType::class, [
+                'class' => Movies::class,
+                'choice_label' => 'titleMovie',
+            ])
         ;
     }
 

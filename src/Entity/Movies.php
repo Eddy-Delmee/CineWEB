@@ -40,7 +40,7 @@ class Movies
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $videoMovie = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $descriptionMovie = null;
 
     #[ORM\OneToMany(mappedBy: 'idMovie', targetEntity: Sessions::class)]
