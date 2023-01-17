@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\News;
 use App\Form\NewsType;
 use App\Repository\NewsRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/news')]
 class NewsController extends AbstractController
@@ -22,17 +23,33 @@ class NewsController extends AbstractController
     }
 
     #[Route('/new', name: 'app_news_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, NewsRepository $newsRepository): Response
+    public function new(Request $request, NewsRepository $newsRepository, SluggerInterface $slugger): Response
     {
         $news = new News();
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('imageNew')->getData();
+            if ($imageFile) {
+            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+            $imageFile->move(
+            $this->getParameter('images_directory'),
+            $newFilename
+            );
+            $news->setimageNew($newFilename);
+            $newsRepository->save($news, true);
+
+
             $newsRepository->save($news, true);
 
             return $this->redirectToRoute('app_news_index', [], Response::HTTP_SEE_OTHER);
         }
+    }
 
         return $this->renderForm('news/new.html.twig', [
             'news' => $news,
@@ -49,16 +66,31 @@ class NewsController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_news_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, News $news, NewsRepository $newsRepository): Response
+    public function edit(Request $request, News $news, NewsRepository $newsRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('imageNew')->getData();
+            if ($imageFile) {
+            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+            $imageFile->move(
+            $this->getParameter('images_directory'),
+            $newFilename
+            );
+            $news->setimageNew($newFilename);
+            $newsRepository->save($news, true);
+
             $newsRepository->save($news, true);
 
             return $this->redirectToRoute('app_news_index', [], Response::HTTP_SEE_OTHER);
         }
+    }
 
         return $this->renderForm('news/edit.html.twig', [
             'news' => $news,

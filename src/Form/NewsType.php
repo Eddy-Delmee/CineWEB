@@ -5,7 +5,9 @@ namespace App\Form;
 use App\Entity\News;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class NewsType extends AbstractType
 {
@@ -13,7 +15,23 @@ class NewsType extends AbstractType
     {
         $builder
             ->add('titleNew')
-            ->add('imageNew')
+
+            // ->add('imageNew')
+            ->add('imageNew', FileType::class, [
+                'label' => 'Image de l\'actualité',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                new File([
+                'maxSize' => '5000k',
+                'mimeTypes' => [
+                'image/*',
+                ],
+                'mimeTypesMessage' => 'Image trop lourde',
+                ])
+                ],
+                ])
+
             ->add('videoNew')
             ->add('descriptionNew')
         ;

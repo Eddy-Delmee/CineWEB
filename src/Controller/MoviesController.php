@@ -65,16 +65,31 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_movies_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Movies $movie, MoviesRepository $moviesRepository): Response
+    public function edit(Request $request, Movies $movie, MoviesRepository $moviesRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(MoviesType::class, $movie);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('imageMovie')->getData();
+            if ($imageFile) {
+            $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+            $imageFile->move(
+            $this->getParameter('images_directory'),
+            $newFilename
+            );
+            $movie->setimageMovie($newFilename);
+            $moviesRepository->save($movie, true);
+
             $moviesRepository->save($movie, true);
 
             return $this->redirectToRoute('app_movies_index', [], Response::HTTP_SEE_OTHER);
         }
+    }
 
         return $this->renderForm('movies/edit.html.twig', [
             'movie' => $movie,

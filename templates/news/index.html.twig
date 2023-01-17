@@ -1,41 +1,64 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}News index{% endblock %}
+{% block title %}Actualités
+{% endblock %}
 
 {% block body %}
-    <h1>News index</h1>
+	<h1>Actualités</h1>
+	<pre>
+    
+</pre> {# {{ dump(app.user.roles[0]) }} #}
+	<table class="table">
+		<thead>
+			<tr>
+				{% if is_granted('ROLE_ADMIN') %}
+					<th>Id</th>
+				{% endif %}
+				<th>Titre</th>
+				<th>Image</th>
+				<th>Video</th>
+				<th>Description</th>
+				{% if is_granted('ROLE_ADMIN') %}
+					<th>actions</th>
+				{% endif %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for news in news %}
+				<tr>
+					<td>{{ news.id }}</td>
+					<td>{{ news.titleNew }}</td>
+					<td><img src="{{ asset('uploads/images/' ~ news.imageNew) }}" width="100"></td>
+					<td>{{ news.videoNew }}</td>
+					<td>{{ news.descriptionNew }}</td>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>TitleNew</th>
-                <th>ImageNew</th>
-                <th>VideoNew</th>
-                <th>DescriptionNew</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for news in news %}
-            <tr>
-                <td>{{ news.id }}</td>
-                <td>{{ news.titleNew }}</td>
-                <td>{{ news.imageNew }}</td>
-                <td>{{ news.videoNew }}</td>
-                <td>{{ news.descriptionNew }}</td>
-                <td>
-                    <a href="{{ path('app_news_show', {'id': news.id}) }}">show</a>
-                    <a href="{{ path('app_news_edit', {'id': news.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+					{% if is_granted('ROLE_ADMIN') %}
 
-    <a href="{{ path('app_news_new') }}">Create new</a>
+						<td>
+							<a href="{{ path('app_news_show', {'id': news.id}) }}">show</a>
+							<a href="{{ path('app_news_edit', {'id': news.id}) }}">edit</a>
+						</td>
+
+					{% endif %}
+
+				</tr>
+
+			{% else %}
+
+				<tr>
+					<td colspan="6">no records found</td>
+				</tr>
+
+			{% endfor %}
+
+		</tbody>
+
+	</table>
+
+	{% if is_granted('ROLE_ADMIN') %}
+
+		<a href="{{ path('app_news_new') }}">Create new</a>
+
+	{% endif %}
+
 {% endblock %}
