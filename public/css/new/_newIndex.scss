@@ -1,4 +1,17 @@
 // <block Total>
+.newIndexBlockTopBot {
+    margin: 0;
+    background-color: rgba(154, 0, 255, 1);
+}
+
+.newIndexCreat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 2em;
+}
 .newIndexCenterBlock {
     padding-top: 3em;
     padding-bottom: 3em;
@@ -10,7 +23,6 @@
     flex-direction: row;
     justify-content: center;
 }
-
 // </block Total>
 
 // <block Left>
@@ -18,6 +30,9 @@
     margin-right: 4em;
 }
 
+.newIndexColor {
+    color: rgb(255, 255, 255);
+}
 // </block Left>
 
 // <block Right>
@@ -29,24 +44,14 @@
     width: 30em;
     font-size: 2em;
 }
-
 // </block Right>
 
-.newIndexCreat {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    font-size: 2em;
-}
 
 // <VisitorBackground>
 .newFrontbackgroundVisitor {
     padding-top: 1em;
     padding-bottom: 3em;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 98%, rgba(0, 0, 0, 1) 99%, rgba(255, 255, 255, 1) 100%);
+    background: rgba(154, 0, 255, 1);
+    background: linear-gradient(0deg, rgba(154, 0, 255, 1) 0%, rgba(154, 0, 255, 1) 98%, rgba(0, 0, 0, 1) 99%, rgba(154, 0, 255, 1) 100%);
 }
-
 // </VisitorBackground>

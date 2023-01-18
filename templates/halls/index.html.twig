@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Halls index{% endblock %}
+{% block title %}Salons{% endblock %}
 
 {% block body %}
-    <h1>Halls index</h1>
+    <h1>Salons</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>NameHall</th>
+                <th>ID</th>
+                <th>Nom salon</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,17 +19,17 @@
                 <td>{{ hall.id }}</td>
                 <td>{{ hall.nameHall }}</td>
                 <td>
-                    <a href="{{ path('app_halls_show', {'id': hall.id}) }}">show</a>
-                    <a href="{{ path('app_halls_edit', {'id': hall.id}) }}">edit</a>
+                    <a href="{{ path('app_halls_show', {'id': hall.id}) }}">Afficher</a>
+                    <a href="{{ path('app_halls_edit', {'id': hall.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_halls_new') }}">Create new</a>
+    <a href="{{ path('app_halls_new') }}">Créer Nouveau</a>
 {% endblock %}

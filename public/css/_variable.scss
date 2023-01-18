@@ -1,15 +1,20 @@
-// body {
-//   background: rgb(0, 0, 0);
-//   background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 15%, rgba(154, 0, 255, 1) 45%, rgba(154, 0, 255, 1) 55%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 1) 100%);
-// }
+
+h1 {
+  color: rgb(255, 221, 0);
+}
 
 h5 {
   color: rgba(154, 0, 255, 1);
 }
 
+.fixe {
+  height: 73vh;
+}
+
 // FontFamilly
 h1, h2, h3, h4, h5, p, a {
   font-family: 'Oleo Script', cursive;
+  text-decoration: none !important;
 }
 
 // Footer

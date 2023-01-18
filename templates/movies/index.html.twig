@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Movies index{% endblock %}
+{% block title %}Films{% endblock %}
 
 {% block body %}
-    <h1>Movies index</h1>
+    <h1>Films</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>TitleMovie</th>
-                <th>Director</th>
-                <th>Producer</th>
-                <th>Actors</th>
-                <th>TimeMovie</th>
-                <th>YearMovie</th>
-                <th>ImageMovie</th>
-                <th>VideoMovie</th>
-                <th>DescriptionMovie</th>
-                <th>actions</th>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Réalisateur</th>
+                <th>Producteur</th>
+                <th>Acteurs</th>
+                <th>Temps film</th>
+                <th>Année film</th>
+                <th>Image film</th>
+                <th>Video film</th>
+                <th>Description film</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -35,17 +35,17 @@
                 <td>{{ movie.videoMovie }}</td>
                 <td>{{ movie.descriptionMovie }}</td>
                 <td>
-                    <a href="{{ path('app_movies_show', {'id': movie.id}) }}">show</a>
-                    <a href="{{ path('app_movies_edit', {'id': movie.id}) }}">edit</a>
+                    <a href="{{ path('app_movies_show', {'id': movie.id}) }}">Afficher</a>
+                    <a href="{{ path('app_movies_edit', {'id': movie.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_movies_new') }}">Create new</a>
+    <a href="{{ path('app_movies_new') }}">Créer Nouveau</a>
 {% endblock %}

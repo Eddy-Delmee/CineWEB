@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Recommendations index{% endblock %}
+{% block title %}Recommendations{% endblock %}
 
 {% block body %}
-    <h1>Recommendations index</h1>
+    <h1>Recommendations</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>ForbiddenAge</th>
+                <th>ID</th>
+                <th>Restriction Âge</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,17 +19,17 @@
                 <td>{{ recommendation.id }}</td>
                 <td>{{ recommendation.forbiddenAge }}</td>
                 <td>
-                    <a href="{{ path('app_recommendations_show', {'id': recommendation.id}) }}">show</a>
-                    <a href="{{ path('app_recommendations_edit', {'id': recommendation.id}) }}">edit</a>
+                    <a href="{{ path('app_recommendations_show', {'id': recommendation.id}) }}">Afficher</a>
+                    <a href="{{ path('app_recommendations_edit', {'id': recommendation.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_recommendations_new') }}">Create new</a>
+    <a href="{{ path('app_recommendations_new') }}">Créer Nouveau</a>
 {% endblock %}

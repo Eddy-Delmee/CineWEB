@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New News{% endblock %}
+{% block title %}création actualiter{% endblock %}
 
 {% block body %}
-    <h1>Create new News</h1>
+    <h1>Créations actualités</h1>
 
     {{ include('news/_form.html.twig') }}
 
-    <a href="{{ path('app_news_index') }}">back to list</a>
+    <a href="{{ path('app_news_index') }}">Retour</a>
 {% endblock %}

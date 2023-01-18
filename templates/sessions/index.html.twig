@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sessions index{% endblock %}
+{% block title %}Sessions{% endblock %}
 
 {% block body %}
-    <h1>Sessions index</h1>
+    <h1>Sessions</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>MonthMovie</th>
-                <th>HourMovie</th>
-                <th>DayMovie</th>
+                <th>ID</th>
+                <th>Mois film</th>
+                <th>Heure film</th>
+                <th>Jour film</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,17 +23,17 @@
                 <td>{{ session.hourMovie }}</td>
                 <td>{{ session.dayMovie }}</td>
                 <td>
-                    <a href="{{ path('app_sessions_show', {'id': session.id}) }}">show</a>
-                    <a href="{{ path('app_sessions_edit', {'id': session.id}) }}">edit</a>
+                    <a href="{{ path('app_sessions_show', {'id': session.id}) }}">Afficher</a>
+                    <a href="{{ path('app_sessions_edit', {'id': session.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_sessions_new') }}">Create new</a>
+    <a href="{{ path('app_sessions_new') }}">Créer Nouveau</a>
 {% endblock %}

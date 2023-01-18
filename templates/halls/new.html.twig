@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Halls{% endblock %}
+{% block title %}Création salons{% endblock %}
 
 {% block body %}
-    <h1>Create new Halls</h1>
+    <h1>Créations salons</h1>
 
     {{ include('halls/_form.html.twig') }}
 
-    <a href="{{ path('app_halls_index') }}">back to list</a>
+    <a href="{{ path('app_halls_index') }}">Retour</a>
 {% endblock %}
