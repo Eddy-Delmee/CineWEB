@@ -1,0 +1,20 @@
+// <main>
+
+.mainIndexBackground {
+    margin: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 15%, rgba(154, 0, 255, 1) 45%, rgba(154, 0, 255, 1) 55%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 1) 100%);
+}
+
+// </main>
+
+// <card>
+
+.mainIndexCenterCard {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+// </card>

@@ -4,61 +4,41 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Actualités</h1>
-	<pre>
-    
-</pre> {# {{ dump(app.user.roles[0]) }} #}
-	<table class="table">
-		<thead>
-			<tr>
-				{% if is_granted('ROLE_ADMIN') %}
-					<th>Id</th>
-				{% endif %}
-				<th>Titre</th>
-				<th>Image</th>
-				<th>Video</th>
-				<th>Description</th>
-				{% if is_granted('ROLE_ADMIN') %}
-					<th>actions</th>
-				{% endif %}
-			</tr>
-		</thead>
-		<tbody>
-			{% for news in news %}
-				<tr>
-					<td>{{ news.id }}</td>
-					<td>{{ news.titleNew }}</td>
-					<td><img src="{{ asset('uploads/images/' ~ news.imageNew) }}" width="100"></td>
-					<td>{{ news.videoNew }}</td>
-					<td>{{ news.descriptionNew }}</td>
 
-					{% if is_granted('ROLE_ADMIN') %}
+{# {{ dump(app.user.roles[0]) }} #}
 
-						<td>
-							<a href="{{ path('app_news_show', {'id': news.id}) }}">show</a>
-							<a href="{{ path('app_news_edit', {'id': news.id}) }}">edit</a>
-						</td>
+<h1 class="text-center">Actualités</h1>
 
-					{% endif %}
+{% for news in news %}
 
-				</tr>
+	{# <title/show/edit> #}
+<div class="newFrontbackgroundVisitor">
+		<p class="text-center newIndexCenterBlock">
 
-			{% else %}
+			{% if is_granted('ROLE_ADMIN') %}
+				ID:
+				{{ news.id }}
+				<a href="{{ path('app_news_show', {'id': news.id}) }}">Afficher</a>
+				<a href="{{ path('app_news_edit', {'id': news.id}) }}">Modifier</a>
+			</br>
+		{% endif %}
 
-				<tr>
-					<td colspan="6">no records found</td>
-				</tr>
+		{{ news.titleNew }}
+	</p>
 
-			{% endfor %}
+	{# </title/show/edit> #}
 
-		</tbody>
 
-	</table>
+	{# <text/Image> #}
+	<div class="newIndexCenter">
+		<div class="newIndexCenterLeft">
+			<img src="{{ asset('uploads/images/' ~ news.imageNew) }}" width="100%" height="auto">
+		</div>
+		<div class="newIndexCenterRight">
+			<p class="text-md-center newIndexCenterRightText">{{ news.descriptionNew }}</p>
+		</div>
+	</div>
+</div>
+{# </text/Image> #}{% endfor %}{% if is_granted('ROLE_ADMIN') %}
 
-	{% if is_granted('ROLE_ADMIN') %}
-
-		<a href="{{ path('app_news_new') }}">Create new</a>
-
-	{% endif %}
-
-{% endblock %}
+<a class="newIndexCreat" href="{{ path('app_news_new') }}">Créer Nouveau</a>{% endif %}{% endblock %}

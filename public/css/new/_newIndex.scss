@@ -1,0 +1,52 @@
+// <block Total>
+.newIndexCenterBlock {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    font-size: 2em;
+}
+
+.newIndexCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+// </block Total>
+
+// <block Left>
+.newIndexCenterLeft {
+    margin-right: 4em;
+}
+
+// </block Left>
+
+// <block Right>
+.newIndexCenterRight {
+    margin-left: 4em;
+}
+
+.newIndexCenterRightText {
+    width: 30em;
+    font-size: 2em;
+}
+
+// </block Right>
+
+.newIndexCreat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 2em;
+}
+
+// <VisitorBackground>
+.newFrontbackgroundVisitor {
+    padding-top: 1em;
+    padding-bottom: 3em;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 98%, rgba(0, 0, 0, 1) 99%, rgba(255, 255, 255, 1) 100%);
+}
+
+// </VisitorBackground>
