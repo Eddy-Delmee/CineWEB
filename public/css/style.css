@@ -3,7 +3,7 @@ h1 {
 }
 
 h5 {
-  color: rgb(154, 0, 255);
+  color: rgb(34, 86, 255);
 }
 
 .fixe {
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, p, a {
 .mainIndexBackground {
   margin: 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 15%, rgb(154, 0, 255) 45%, rgb(154, 0, 255) 55%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 15%, rgb(34, 86, 255) 45%, rgb(34, 86, 255) 55%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%);
 }
 
 .mainIndexCenterCard {
@@ -112,7 +112,11 @@ h1, h2, h3, h4, h5, p, a {
 
 .newIndexBlockTopBot {
   margin: 0;
-  background-color: rgb(154, 0, 255);
+  background-color: rgb(55, 59, 62);
+}
+
+.newIndexColorWhite {
+  color: white;
 }
 
 .newIndexCreat {
@@ -156,8 +160,8 @@ h1, h2, h3, h4, h5, p, a {
 .newFrontbackgroundVisitor {
   padding-top: 1em;
   padding-bottom: 3em;
-  background: rgb(154, 0, 255);
-  background: linear-gradient(0deg, rgb(154, 0, 255) 0%, rgb(154, 0, 255) 98%, rgb(0, 0, 0) 99%, rgb(154, 0, 255) 100%);
+  background: rgb(55, 59, 62);
+  background: linear-gradient(0deg, rgb(55, 59, 62) 0%, rgb(55, 59, 62) 98%, rgb(0, 0, 0) 99%, rgb(55, 59, 62) 100%);
 }
 
 .backgoundEdit {
@@ -169,7 +173,6 @@ h1, h2, h3, h4, h5, p, a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 64vh;
 }
 
 .formcolor {

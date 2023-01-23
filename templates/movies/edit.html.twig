@@ -1,13 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer Films{% endblock %}
+{% block title %}Modifier Films
+{% endblock %}
 
 {% block body %}
-    <h1>Nouveau film</h1>
 
-    {{ include('movies/_form.html.twig', {'button_label': 'Update'}) }}
+	<main class="backgoundEdit">
+		<h1 class="text-center backgroundShow">Nouveau film</h1>
 
-    <a href="{{ path('app_movies_index') }}">Retour</a>
+		<section class="text-center">
 
-    {{ include('movies/_delete_form.html.twig') }}
+			{{ include('movies/_form.html.twig', {'button_label': 'Confirmer'}) }}
+
+			<div class="text-center">
+
+				{{ include('movies/_delete_form.html.twig') }}
+
+				<a href="{{ path('app_movies_index') }}" class="btn btn-light mt-3">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+	
 {% endblock %}

@@ -1,7 +1,11 @@
 // <block Total>
 .newIndexBlockTopBot {
     margin: 0;
-    background-color: rgba(154, 0, 255, 1);
+    background-color: rgba(55,59,62,1);
+}
+
+.newIndexColorWhite {
+    color: white;
 }
 
 .newIndexCreat {
@@ -51,7 +55,7 @@
 .newFrontbackgroundVisitor {
     padding-top: 1em;
     padding-bottom: 3em;
-    background: rgba(154, 0, 255, 1);
-    background: linear-gradient(0deg, rgba(154, 0, 255, 1) 0%, rgba(154, 0, 255, 1) 98%, rgba(0, 0, 0, 1) 99%, rgba(154, 0, 255, 1) 100%);
+    background: rgba(55,59,62,1);
+    background: linear-gradient(0deg, rgba(55,59,62,1) 0%, rgba(55,59,62,1) 98%, rgba(0, 0, 0, 1) 99%, rgba(55,59,62,1) 100%);
 }
 // </VisitorBackground>

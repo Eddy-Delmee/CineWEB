@@ -1,26 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Halls{% endblock %}
+{% block title %}Halls
+{% endblock %}
 
 {% block body %}
-    <h1>Halls</h1>
+	<h1 class="text-center backgroundShow">Halls</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ hall.id }}</td>
-            </tr>
-            <tr>
-                <th>NameHall</th>
-                <td>{{ hall.nameHall }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<table class="table table-dark table-striped">
+		<tbody>
+			<tr>
+				<th>Id</th>
+				<td>{{ hall.id }}</td>
+			</tr>
+			<tr>
+				<th>NameHall</th>
+				<td>{{ hall.nameHall }}</td>
+			</tr>
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_halls_index') }}">back to list</a>
+	<div class="text-center backgroundShow">
+		<a href="{{ path('app_halls_index') }}" class="btn btn-light mb-3">Retour</a>
 
-    <a href="{{ path('app_halls_edit', {'id': hall.id}) }}">edit</a>
+		<a href="{{ path('app_halls_edit', {'id': hall.id}) }}" class="btn btn-success mb-3">Editer</a>
 
-    {{ include('halls/_delete_form.html.twig') }}
+		{{ include('halls/_delete_form.html.twig') }}
+	</div>
 {% endblock %}
