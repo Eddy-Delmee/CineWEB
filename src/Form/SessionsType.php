@@ -9,15 +9,17 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class SessionsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('monthMovie')
-            ->add('hourMovie')
-            ->add('dayMovie')
+            ->add('dateSession', DateTimeType::class, [
+                'widget' => 'single_text',
+                'date_label' => 'Starts On',
+            ])
             // ->add('idHall')
             ->add('idHall', EntityType::class, [
                 'class' => Halls::class,

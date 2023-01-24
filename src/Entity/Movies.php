@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\MoviesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Sessions;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MoviesRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: MoviesRepository::class)]
 class Movies
@@ -52,6 +53,9 @@ class Movies
 
     #[ORM\ManyToOne(inversedBy: 'movies')]
     private ?Recommendations $idRecommendation = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $shortDesciptionMovie = null;
 
     public function __construct()
     {
@@ -221,6 +225,18 @@ class Movies
     public function setIdRecommendation(?Recommendations $idRecommendation): self
     {
         $this->idRecommendation = $idRecommendation;
+
+        return $this;
+    }
+
+    public function getShortDesciptionMovie(): ?string
+    {
+        return $this->shortDesciptionMovie;
+    }
+
+    public function setShortDesciptionMovie(?string $shortDesciptionMovie): self
+    {
+        $this->shortDesciptionMovie = $shortDesciptionMovie;
 
         return $this;
     }

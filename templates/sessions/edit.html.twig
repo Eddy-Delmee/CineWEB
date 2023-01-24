@@ -1,13 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Sessions{% endblock %}
+{% block title %}Modifier Horaires
+{% endblock %}
 
 {% block body %}
-    <h1 class="text-center backgroundShow">Nouvelle session</h1>
 
-    {{ include('sessions/_form.html.twig', {'button_label': 'Update'}) }}
+	<main class="backgoundEdit">
+		<h1 class="text-center backgroundShow">Nouvelle Horaire</h1>
 
-    <a href="{{ path('app_sessions_index') }}">Retour</a>
+		<section class="text-center">
 
-    {{ include('sessions/_delete_form.html.twig') }}
+			{{ include('sessions/_form.html.twig', {'button_label': 'Confirmer'}) }}
+
+			<a href="{{ path('app_sessions_index') }}">Retour</a>
+
+			{{ include('sessions/_delete_form.html.twig') }}
+
+		</section>
+	</main>
 {% endblock %}

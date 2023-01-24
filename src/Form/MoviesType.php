@@ -42,6 +42,7 @@ class MoviesType extends AbstractType
                 ])
                 
             ->add('videoMovie')
+            ->add('shortDesciptionMovie')
             ->add('descriptionMovie', CKEditorType::class)
             // ->add('idCategory')
             ->add('idCategory', EntityType::class, [

@@ -1,39 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sessions{% endblock %}
+{% block title %}Horaires
+{% endblock %}
 
 {% block body %}
-    <h1>Sessions</h1>
+	<h1 class="text-center backgroundShow">Horaires</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Mois film</th>
-                <th>Heure film</th>
-                <th>Jour film</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for session in sessions %}
-            <tr>
-                <td>{{ session.id }}</td>
-                <td>{{ session.monthMovie }}</td>
-                <td>{{ session.hourMovie }}</td>
-                <td>{{ session.dayMovie }}</td>
-                <td>
-                    <a href="{{ path('app_sessions_show', {'id': session.id}) }}" class="btn btn-light">Afficher</a>
-                    <a href="{{ path('app_sessions_edit', {'id': session.id}) }}" class="btn btn-light">Editer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">Aucun enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Jours-mois-Années</th>
+				<th>Heures films</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for session in sessions %}
+				<tr>
+					<td>{{ session.id }}</td>
+					<td>{{ session.dateSession|date('d-m-Y') }}</td>
+					<td>{{ session.dateSession|date('H:i') }}</td>
+					<td>
+						<a href="{{ path('app_sessions_show', {'id': session.id}) }}" class="btn btn-light">Afficher</a>
+						<a href="{{ path('app_sessions_edit', {'id': session.id}) }}" class="btn btn-light">Editer</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">Aucun enregistrement trouvé</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="text-center backgroundShow">
+		<a href="{{ path('app_sessions_new') }}" class="btn btn-success">Créer Nouveau</a>
+	</div>
 
-    <a href="{{ path('app_sessions_new') }}">Créer Nouveau</a>
 {% endblock %}
