@@ -6,6 +6,7 @@ use App\Entity\Movies;
 use App\Entity\Categories;
 use App\Entity\Recommendations;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
@@ -41,7 +42,7 @@ class MoviesType extends AbstractType
                 ])
                 
             ->add('videoMovie')
-            ->add('descriptionMovie')
+            ->add('descriptionMovie', CKEditorType::class)
             // ->add('idCategory')
             ->add('idCategory', EntityType::class, [
                 'class' => Categories::class,

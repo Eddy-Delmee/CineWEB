@@ -33,7 +33,7 @@
                 <td>{{ movie.yearMovie }}</td>
                 <td><img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" width="100"></td>
                 <td>{{ movie.videoMovie }}</td>
-                <td>{{ movie.descriptionMovie }}</td>
+                <td>{{ movie.descriptionMovie|raw }}</td>
                 <td>
                     {# <a href="{{ path('app_movies_show', {'id': movie.id}) }}" class="btn btn-light mb-3">Afficher</a> #}
                     <a href="{{ path('app_movies_edit', {'id': movie.id}) }}" class="btn btn-success mb-3">Modifier</a>
