@@ -18,7 +18,7 @@ class Halls
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $nameHall = null;
 
-    #[ORM\OneToMany(mappedBy: 'idHall', targetEntity: Sessions::class)]
+    #[ORM\OneToMany(mappedBy: 'halls', targetEntity: Sessions::class)]
     private Collection $sessions;
 
     public function __construct()
@@ -55,7 +55,7 @@ class Halls
     {
         if (!$this->sessions->contains($session)) {
             $this->sessions->add($session);
-            $session->setIdHall($this);
+            $session->setHalls($this);
         }
 
         return $this;
@@ -65,8 +65,8 @@ class Halls
     {
         if ($this->sessions->removeElement($session)) {
             // set the owning side to null (unless already changed)
-            if ($session->getIdHall() === $this) {
-                $session->setIdHall(null);
+            if ($session->getHalls() === $this) {
+                $session->setHalls(null);
             }
         }
 

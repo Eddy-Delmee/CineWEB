@@ -20,8 +20,8 @@ class SessionsType extends AbstractType
                 'widget' => 'single_text',
                 'date_label' => 'Starts On',
             ])
-            // ->add('idHall')
-            ->add('idHall', EntityType::class, [
+            // ->add('halls')
+            ->add('halls', EntityType::class, [
                 'class' => Halls::class,
                 'choice_label' => 'nameHall',
             ])

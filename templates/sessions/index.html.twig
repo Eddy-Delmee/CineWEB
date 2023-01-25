@@ -10,6 +10,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
+				<th>Titre</th>
 				<th>Jours-mois-Années</th>
 				<th>Heures films</th>
 				<th>actions</th>
@@ -18,6 +19,7 @@
 		<tbody>
 			{% for session in sessions %}
 				<tr>
+					<td>{{ session.id }}</td>
 					<td>{{ session.id }}</td>
 					<td>{{ session.dateSession|date('d-m-Y') }}</td>
 					<td>{{ session.dateSession|date('H:i') }}</td>

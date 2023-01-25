@@ -15,6 +15,16 @@ h1, h2, h3, h4, h5, a {
   text-decoration: none !important;
 }
 
+.navbarColorBlack {
+  color: rgb(0, 0, 0) !important;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: #4b4c4d;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+}
+
 .footer-clean {
   padding: 50px 0;
   background-color: #fff;
