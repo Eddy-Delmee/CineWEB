@@ -11,13 +11,14 @@ h5 {
   height: 73vh;
 }
 
-// FontFamilly
+// <FontFamilly>
 h1, h2, h3, h4, h5, a {
   font-family: 'Oleo Script', cursive;
   text-decoration: none !important;
 }
+// </FontFamilly>
 
-// Header
+// <Header>
 .navbarColorBlack {
   color: rgb(0, 0, 0) !important;
   padding: 0.25rem 0.75rem;
@@ -27,8 +28,18 @@ h1, h2, h3, h4, h5, a {
   border: 2px solid black;
   border-radius: 0.25rem;
 }
+// </Header>
 
-// Footer
+// <Main>
+.heightMin {
+  min-height: 73vh;
+  margin: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 15%, rgb(34, 86, 255) 45%, rgb(34, 86, 255) 55%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 1) 100%);
+}
+// </Main>
+
+// <Footer>
 .footer-clean {
   padding: 50px 0;
   background-color: #fff;
@@ -114,3 +125,4 @@ h1, h2, h3, h4, h5, a {
   font-size: 13px;
   opacity: 0.6;
 }
+// </Footer>
