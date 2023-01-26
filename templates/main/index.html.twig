@@ -16,7 +16,9 @@
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
-								<h5 class="card-title">{{ movie.titleMovie }}</h5>
+								<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
+									<h5 class="card-title">{{ movie.titleMovie }}</h5>
+								</a>
 								<p class="card-text">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
 								<p class="card-text">
 									<small class="text-muted">Last updated 3 mins ago</small>
@@ -50,6 +52,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 			{# </card> #}
 		{% endfor %}
