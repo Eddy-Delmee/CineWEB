@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer Recommendations{% endblock %}
+{% block title %}Editer Recommendations
+{% endblock %}
 
 {% block body %}
-    <h1 class="text-center backgroundShow">Nouvelle recommendation</h1>
 
-    {{ include('recommendations/_form.html.twig', {'button_label': 'Update'}) }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_recommendations_index') }}" class="btn btn-light">Retour</a>
+		<h1 class="text-center backgroundShow">Nouvelle recommendation</h1>
 
-    {{ include('recommendations/_delete_form.html.twig') }}
+		<section class="backgroundShow formMargin">
+
+			{{ include('recommendations/_form.html.twig', {'button_label': 'Update'}) }}
+
+			<div class="text-center">
+
+				{{ include('recommendations/_delete_form.html.twig') }}
+
+				<a href="{{ path('app_recommendations_index') }}" class="btn btn-light mt-3">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+
 {% endblock %}

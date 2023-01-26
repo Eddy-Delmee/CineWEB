@@ -1,53 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Films{% endblock %}
+{% block title %}Films
+{% endblock %}
 
 {% block body %}
-    <h1 class="text-center backgroundShow">Films</h1>
+	<h1 class="text-center backgroundShow">Films</h1>
 
-    <table class="table table-dark table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Titre</th>
-                <th>Réalisateur</th>
-                <th>Producteur</th>
-                <th>Acteurs</th>
-                <th>Temps film</th>
-                <th>Année film</th>
-                <th>Image film</th>
-                <th>Video film</th>
-                <th>Description film</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for movie in movies %}
-            <tr>
-                <td>{{ movie.id }}</td>
-                <td>{{ movie.titleMovie }}</td>
-                <td>{{ movie.director }}</td>
-                <td>{{ movie.producer }}</td>
-                <td>{{ movie.actors }}</td>
-                <td>{{ movie.timeMovie }}</td>
-                <td>{{ movie.yearMovie }}</td>
-                <td><img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" width="100"></td>
-                <td>{{ movie.videoMovie }}</td>
-                <td>{{ movie.descriptionMovie|raw }}</td>
-                <td>
-                    {# <a href="{{ path('app_movies_show', {'id': movie.id}) }}" class="btn btn-light mb-3">Afficher</a> #}
-                    <a href="{{ path('app_movies_edit', {'id': movie.id}) }}" class="btn btn-success mb-3">Modifier</a>
-                    {{ include('movies/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">Aucun enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-<div class="text-center backgroundShow">
-    <a href="{{ path('app_movies_new') }}" class="btn btn-success">Créer Nouveau</a>
-    </div>
+	<table class="table table-dark table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Titre</th>
+				<th>Réalisateur</th>
+				<th>Producteur</th>
+				<th>Acteurs</th>
+				<th>Temps film</th>
+				<th>Année film</th>
+				<th>Image film</th>
+				<th>Video film</th>
+				<th>Description film</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for movie in movies %}
+				<tr>
+					<td>{{ movie.id }}</td>
+					<td>{{ movie.titleMovie }}</td>
+					<td>{{ movie.director }}</td>
+					<td>{{ movie.producer }}</td>
+					<td>{{ movie.actors }}</td>
+					<td>{{ movie.timeMovie }}</td>
+					<td>{{ movie.yearMovie }}</td>
+					<td><img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" width="100"></td>
+					<td>{{ movie.videoMovie }}</td>
+					<td>{{ movie.descriptionMovie|raw }}</td>
+					<td>
+						{# <a href="{{ path('app_movies_show', {'id': movie.id}) }}" class="btn btn-light mb-3">Afficher</a> #}
+						<a href="{{ path('app_movies_edit', {'id': movie.id}) }}" class="btn btn-success mb-3">Modifier</a>
+						{{ include('movies/_delete_form.html.twig') }}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="11">Aucun enregistrement trouvé</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="text-center backgroundShow">
+		<a href="{{ path('app_movies_new') }}" class="btn btn-success">Créer Nouveau</a>
+	</div>
 {% endblock %}

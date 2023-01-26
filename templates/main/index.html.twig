@@ -33,16 +33,16 @@
 									</thead>
 
 									<tr>
+										<pre>
+									</pre>
 										{% for session in sessions %}
-											<td>{{session.dateSession|date('d-m')}}</td>
-											<td>{{session.dateSession|date('H:i')}}</td>
-											{{ dump(session) }}
-											{% for hall in session.halls %}
-												<pre>
-											
-										</pre>
-												<td>{{hall.nameHall}}</td>
-											{% endfor %}
+
+											{% if session.idmovie.id == movie.id %}
+												<td>{{session.dateSession|date('d-m')}}</td>
+												<td>{{session.dateSession|date('H:i')}}</td>
+												<td>{{session.halls.nameHall}}</td>
+											{% endif %}
+
 										{% endfor %}
 									</tr>
 

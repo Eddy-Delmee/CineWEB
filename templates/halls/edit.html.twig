@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Halls{% endblock %}
+{% block title %}Modifier Sallons
+{% endblock %}
 
 {% block body %}
-    <h1>Nouvelle Salle</h1>
 
-    {{ include('halls/_form.html.twig', {'button_label': 'Update'}) }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_halls_index') }}" class="btn btn-light">Retour</a>
+		<h1 class="text-center backgroundShow">Nouvelle Salle</h1>
 
-    {{ include('halls/_delete_form.html.twig') }}
+		<section class="backgroundShow formMargin">
+
+			{{ include('halls/_form.html.twig', {'button_label': 'Confirmer'}) }}
+
+			<div class="text-center">
+
+				{{ include('halls/_delete_form.html.twig') }}
+				
+				<a href="{{ path('app_halls_index') }}" class="btn btn-light mt-3">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+	
 {% endblock %}

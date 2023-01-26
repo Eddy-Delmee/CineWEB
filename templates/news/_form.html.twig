@@ -1,6 +1,8 @@
-<a class="formcolor">
+<div class="formcolor">
 	{{ form_start(form) }}
 	{{ form_widget(form) }}
-</a>
-<button class="btn btn-success">{{ button_label|default('Save') }}</button>
+</div>
+<div class="text-center mb-3">
+	<button class="btn btn-success">{{ button_label|default('Save') }}</button>
+</div>
 {{ form_end(form) }}

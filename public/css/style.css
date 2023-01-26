@@ -10,6 +10,15 @@ h5 {
   height: 73vh;
 }
 
+.formcolor {
+  color: white !important;
+}
+
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
 h1, h2, h3, h4, h5, a {
   font-family: "Oleo Script", cursive;
   text-decoration: none !important;
@@ -186,21 +195,7 @@ h1, h2, h3, h4, h5, a {
   padding: 1em;
 }
 
-.textCenter1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.formcolor {
-  color: white !important;
-}
-
 .backgroundShow {
   background-color: rgb(55, 59, 62);
   padding: 1em;
-}
-
-.marginshow {
-  margin: 0;
 }/*# sourceMappingURL=style.css.map */

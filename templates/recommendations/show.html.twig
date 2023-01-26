@@ -6,7 +6,7 @@
 {% block body %}
 	<h1 class="text-center backgroundShow">Recommendations</h1>
 
-	<table class="table table-dark table-striped">
+	<table class="table table-dark table-striped mb-2">
 		<tbody>
 			<tr>
 				<th>ID</th>
@@ -19,7 +19,7 @@
 		</tbody>
 	</table>
 
-	<div class="text-center backgroundShow">
+	<div class="text-center backgroundShow mt-2">
 		<a href="{{ path('app_recommendations_index') }}" class="btn btn-light mb-3">Retour</a>
 
 		<a href="{{ path('app_recommendations_edit', {'id': recommendation.id}) }}" class="btn btn-success mb-3">Editer</a>

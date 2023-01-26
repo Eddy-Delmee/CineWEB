@@ -1,21 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer Actualités
+{% block title %}Modifier Actualités
 {% endblock %}
 
 {% block body %}
 
 	<main class="backgoundEdit">
-		<h1 class="text-center">Nouvelle actualité</h1>
 
-		<section class="textCenter1">
+		<h1 class="text-center backgroundShow">Nouvelle actualité</h1>
+
+		<section class="backgroundShow formMargin">
 
 			{{ include('news/_form.html.twig', {'button_label': 'Confirmer'}) }}
 
-			<a href="{{ path('app_news_index') }}" class="btn btn-light">Retour</a>
+			<div class="text-center">
 
-			{{ include('news/_delete_form.html.twig') }}
+				{{ include('news/_delete_form.html.twig') }}
 
+				<a href="{{ path('app_news_index') }}" class="btn btn-light mt-3">Retour</a>
+
+			</div>
 
 		</section>
 

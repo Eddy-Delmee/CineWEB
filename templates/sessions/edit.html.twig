@@ -6,16 +6,23 @@
 {% block body %}
 
 	<main class="backgoundEdit">
+
 		<h1 class="text-center backgroundShow">Nouvelle Horaire</h1>
 
-		<section class="text-center">
+		<section class="backgroundShow formMargin">
 
 			{{ include('sessions/_form.html.twig', {'button_label': 'Confirmer'}) }}
 
-			<a href="{{ path('app_sessions_index') }}">Retour</a>
+			<div class="text-center">
 
-			{{ include('sessions/_delete_form.html.twig') }}
+				{{ include('sessions/_delete_form.html.twig') }}
+
+				<a href="{{ path('app_sessions_index') }}" class="btn btn-light mt-3">Retour</a>
+
+			</div>
 
 		</section>
+
 	</main>
+
 {% endblock %}
