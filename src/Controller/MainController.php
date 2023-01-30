@@ -16,7 +16,8 @@ class MainController extends AbstractController
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'movies' => $moviesRepository->findAll(),
-            'sessions' => $sessionsRepository->findAll(),
+            'movieCarousel' => $moviesRepository->sortById(),
+            'sessions' => $sessionsRepository->findByDate(),
         ]);
     }
 }

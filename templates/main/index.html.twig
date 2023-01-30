@@ -5,6 +5,59 @@
 
 {% block body %}
 
+	<div id="carousel">
+
+		<div
+			class="hideLeft">
+			{# <img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg"> #}
+			{{ movieCarousel[6].imageMovie }}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[6].imageMovie) }}" alt="image">
+		</div>
+
+		<div
+			class="prevLeftSecond">
+			{# <img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg"> #}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[4].imageMovie) }}" alt="image">
+		</div>
+
+		<div
+			class="prev">
+			{# <img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg"> #}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[2].imageMovie) }}" alt="image">
+		</div>
+
+		<div
+			class="selected">
+			{# <img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg"> #}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[0].imageMovie) }}" alt="image">
+		</div>
+
+		<div
+			class="next">
+			{# <img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg"> #}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[1].imageMovie) }}" alt="image">
+		</div>
+
+		<div
+			class="nextRightSecond">
+			{# <img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg"> #}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[3].imageMovie) }}" alt="image">
+		</div>
+
+		<div
+			class="hideRight">
+			{# <img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg"> #}
+			{{ movieCarousel[5].imageMovie }}
+			<img src="{{ asset('uploads/images/' ~ movieCarousel[5].imageMovie) }}" alt="image">
+		</div>
+
+	</div>
+
+	<div class="text-center mt-2">
+		<button id="prev"> < </button>
+		<button id="next"> > </button>
+	</div>
+
 	<main class="mainIndexBackground">
 		{% for movie in movies %}
 			{# <card> #}
@@ -12,7 +65,7 @@
 				<div class="card mb-3" style="max-width: 40em;">
 					<div class="row g-0">
 						<div class="col-md-4">
-							<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" width="100" class="card-img-top" alt="...">
+							<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" width="100" class="card-img-top" alt="image">
 						</div>
 						<div class="col-md-8">
 							<div class="card-body">
@@ -32,19 +85,17 @@
 										<th>Salons</th>
 									</thead>
 
-									
-										
-										{% for session in sessions %}
-<tr>
+
+									{% for session in sessions %}
+										<tr>
 											{% if session.idmovie.id == movie.id %}
 												<td>{{session.dateSession|date('d-m')}}</td>
 												<td>{{session.dateSession|date('H:i')}}</td>
 												<td>{{session.halls.nameHall}}</td>
 											{% endif %}
-</tr>
-										{% endfor %}
+										</tr>
+									{% endfor %}
 
-									
 
 								</table>
 
