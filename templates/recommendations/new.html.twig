@@ -1,11 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Recommendations{% endblock %}
+{% block title %}New Recommendations
+{% endblock %}
 
 {% block body %}
-    <h1>Créations recommendation</h1>
 
-    {{ include('recommendations/_form.html.twig') }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_recommendations_index') }}" class="btn btn-light">Retour</a>
+		<h1 class="text-center backgroundShow">Créations recommendation</h1>
+
+		<section class="backgroundShow formMargin">
+
+			{{ include('recommendations/_form.html.twig') }}
+
+			<div class="text-center">
+
+				<a href="{{ path('app_recommendations_index') }}" class="btn btn-light">Retour</a>
+                
+			</div>
+
+		</section>
+
+	</main>
+
 {% endblock %}

@@ -1,11 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Création horaires{% endblock %}
+{% block title %}Créations horaires
+{% endblock %}
 
 {% block body %}
-    <h1>Créations horaires</h1>
 
-    {{ include('sessions/_form.html.twig') }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_sessions_index') }}">Retour</a>
+		<h1 class="text-center backgroundShow">Créations horaires</h1>
+
+		<section class="backgroundShow formMargin">
+
+			{{ include('sessions/_form.html.twig') }}
+
+			<div class="text-center">
+
+				<a href="{{ path('app_sessions_index') }}" class="btn btn-light">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+
 {% endblock %}

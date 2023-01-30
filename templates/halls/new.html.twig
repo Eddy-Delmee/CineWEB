@@ -1,11 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Création salons{% endblock %}
+{% block title %}Création salons
+{% endblock %}
 
 {% block body %}
-    <h1>Créations salons</h1>
 
-    {{ include('halls/_form.html.twig') }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_halls_index') }}">Retour</a>
+		<h1 class="text-center backgroundShow">Créations salons</h1>
+
+		<section class="backgroundShow formMargin">
+
+			{{ include('halls/_form.html.twig') }}
+
+			<div class="text-center">
+
+				<a href="{{ path('app_halls_index') }}" class="btn btn-light">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+
 {% endblock %}

@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 #[Route('/news')]
 class NewsController extends AbstractController
@@ -23,6 +24,7 @@ class NewsController extends AbstractController
     }
 
     #[Route('/new', name: 'app_news_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function new(Request $request, NewsRepository $newsRepository, SluggerInterface $slugger): Response
     {
         $news = new News();
@@ -66,6 +68,7 @@ class NewsController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_news_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, News $news, NewsRepository $newsRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(NewsType::class, $news);

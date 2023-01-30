@@ -1,11 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Création categories{% endblock %}
+{% block title %}Création categories
+{% endblock %}
 
 {% block body %}
-    <h1>Créations Catégories</h1>
 
-    {{ include('categories/_form.html.twig') }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_categories_index') }}">Retour</a>
+		<h1 class="text-center backgroundShow">Créations Catégories</h1>
+
+		<section class="backgroundShow formMargin">
+
+			{{ include('categories/_form.html.twig') }}
+
+			<div class="text-center">
+
+				<a href="{{ path('app_categories_index') }}" class="btn btn-light">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+
 {% endblock %}

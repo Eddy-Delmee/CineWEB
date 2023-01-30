@@ -1,11 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}création actualiter{% endblock %}
+{% block title %}création actualiter
+{% endblock %}
 
 {% block body %}
-    <h1>Créations actualités</h1>
 
-    {{ include('news/_form.html.twig') }}
+	<main class="backgoundEdit">
 
-    <a href="{{ path('app_news_index') }}">Retour</a>
+		<h1 class="text-center backgroundShow">Créations actualités</h1>
+
+		<section class="backgroundShow formMargin">
+
+			{{ include('news/_form.html.twig') }}
+
+			<div class="text-center">
+
+				<a href="{{ path('app_news_index') }}" class="btn btn-light">Retour</a>
+
+			</div>
+
+		</section>
+
+	</main>
+
 {% endblock %}

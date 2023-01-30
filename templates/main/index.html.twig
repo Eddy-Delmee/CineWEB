@@ -32,19 +32,19 @@
 										<th>Salons</th>
 									</thead>
 
-									<tr>
-										<pre>
-									</pre>
+									
+										
 										{% for session in sessions %}
-
+<tr>
 											{% if session.idmovie.id == movie.id %}
 												<td>{{session.dateSession|date('d-m')}}</td>
 												<td>{{session.dateSession|date('H:i')}}</td>
 												<td>{{session.halls.nameHall}}</td>
 											{% endif %}
-
+</tr>
 										{% endfor %}
-									</tr>
+
+									
 
 								</table>
 

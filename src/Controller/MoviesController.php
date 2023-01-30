@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 #[Route('/movies')]
 class MoviesController extends AbstractController
@@ -23,6 +24,7 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/new', name: 'app_movies_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function new(Request $request, MoviesRepository $moviesRepository, SluggerInterface $slugger): Response
     {
         $movie = new Movies();
@@ -65,6 +67,7 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_movies_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Movies $movie, MoviesRepository $moviesRepository, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(MoviesType::class, $movie);

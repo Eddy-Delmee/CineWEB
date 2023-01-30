@@ -24,10 +24,7 @@
 		{% endif %}
 	</p>
 	<h2 class="text-center newIndexColor">{{ news.titleNew }}</h2>
-
-
 	{# </title/show/edit> #}
-
 
 	{# <text/Image> #}
 	<div class="newIndexCenter">
@@ -39,7 +36,8 @@
 		</div>
 	</div>
 </div>
-{# </text/Image> #}{% endfor %}{% if is_granted('ROLE_ADMIN') %}
+{# </text/Image> #}
+{% endfor %}{% if is_granted('ROLE_ADMIN') %}
 
 <div class="newIndexBlockTopBot">
 	<a class="newIndexCreat newIndexColor" href="{{ path('app_news_new') }}">Créer Nouveau</a>
