@@ -5,107 +5,100 @@
 
 {% block body %}
 
+	{# <carousel> #}
 	<div id="carousel">
 
-		<div
-			class="hideLeft">
-			{# <img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg"> #}
-			{{ movieCarousel[6].imageMovie }}
+		<div class="hideLeft">
 			<img src="{{ asset('uploads/images/' ~ movieCarousel[6].imageMovie) }}" alt="image">
 		</div>
 
-		<div
-			class="prevLeftSecond">
-			{# <img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg"> #}
+		<div class="prevLeftSecond">
 			<img src="{{ asset('uploads/images/' ~ movieCarousel[4].imageMovie) }}" alt="image">
 		</div>
 
-		<div
-			class="prev">
-			{# <img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg"> #}
+		<div class="prev">
 			<img src="{{ asset('uploads/images/' ~ movieCarousel[2].imageMovie) }}" alt="image">
 		</div>
 
-		<div
-			class="selected">
-			{# <img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg"> #}
-			<img src="{{ asset('uploads/images/' ~ movieCarousel[0].imageMovie) }}" alt="image">
+		<div class="selected">
+			<a href="{{ path('app_movies_show', {'id': movieCarousel[0].id}) }}">
+				<img src="{{ asset('uploads/images/' ~ movieCarousel[0].imageMovie) }}" alt="image">
+			</a>
 		</div>
 
-		<div
-			class="next">
-			{# <img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg"> #}
+		<div class="next">
 			<img src="{{ asset('uploads/images/' ~ movieCarousel[1].imageMovie) }}" alt="image">
 		</div>
 
-		<div
-			class="nextRightSecond">
-			{# <img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg"> #}
+		<div class="nextRightSecond">
 			<img src="{{ asset('uploads/images/' ~ movieCarousel[3].imageMovie) }}" alt="image">
 		</div>
 
-		<div
-			class="hideRight">
-			{# <img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg"> #}
+		<div class="hideRight">
 			<img src="{{ asset('uploads/images/' ~ movieCarousel[5].imageMovie) }}" alt="image">
 		</div>
 
 	</div>
 
 	<div class="text-center mt-2">
-		<button id="prev"> < </button>
-		<button id="next"> > </button>
-	</div>
-
-	<main class="mainIndexBackground">
-		{% for movie in movies %}
-			{# <card> #}
-			<div class="mainIndexCenterCard">
-				<div class="card mb-3" style="max-width: 40em;">
-					<div class="row g-0">
-						<div class="col-md-4">
-							<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" width="100" class="card-img-top" alt="image">
-						</div>
-						<div class="col-md-8">
-							<div class="card-body">
-								<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
-									<h5 class="card-title">{{ movie.titleMovie }}</h5>
-								</a>
-								<p class="card-text">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
-								<p class="card-text">
-									<small class="text-muted">Last updated 3 mins ago</small>
-								</p>
-
-								<table>
-
-									<thead>
-										<th>Visions</th>
-										<th>Horaires</th>
-										<th>Salons</th>
-									</thead>
+		<button class="button5" id="prev">
+			<</button>
+				<button class="button5" id="next">
+					>
+				</button>
+			</div>
+			{# </carousel> #}
 
 
-									{% for session in sessions %}
-										<tr>
-											{% if session.idmovie.id == movie.id %}
-												<td>{{session.dateSession|date('d-m')}}</td>
-												<td>{{session.dateSession|date('H:i')}}</td>
-												<td>{{session.halls.nameHall}}</td>
-											{% endif %}
-										</tr>
-									{% endfor %}
+			<main class="mainIndexBackground">
+				{% for movie in movies %}
+					{# <card> #}
+					<div class="mainIndexCenterCard">
+						<div class="card mb-3">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
+											<h5 class="card-title">{{ movie.titleMovie }}</h5>
+										</a>
+										<p class="card-text">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
+										<p class="card-text">
+											<small class="text-muted">Last updated 3 mins ago</small>
+										</p>
+
+										<table>
+
+											<thead>
+												<th>Visions</th>
+												<th>Horaires</th>
+												<th>Salons</th>
+											</thead>
 
 
-								</table>
+											{% for session in sessions %}
+												<tr>
+													{% if session.idmovie.id == movie.id %}
+														<td>{{session.dateSession|date('d-m')}}</td>
+														<td>{{session.dateSession|date('H:i')}}</td>
+														<td>{{session.halls.nameHall}}</td>
+													{% endif %}
+												</tr>
+											{% endfor %}
 
+
+										</table>
+
+									</div>
+								</div>
 							</div>
 						</div>
+
 					</div>
-				</div>
+					{# </card> #}
+				{% endfor %}
+			</main>
 
-			</div>
-			{# </card> #}
-		{% endfor %}
-	</main>
-
-{% endblock %}
+		{% endblock %}
