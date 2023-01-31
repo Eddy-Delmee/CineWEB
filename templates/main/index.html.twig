@@ -5,6 +5,10 @@
 
 {% block body %}
 
+<main>
+<h1 class="text-center mt-2">
+	Films du moment
+</h1>
 	{# <carousel> #}
 	<div id="carousel">
 
@@ -42,63 +46,68 @@
 
 	<div class="text-center mt-2">
 		<button class="button5" id="prev">
-			<</button>
-				<button class="button5" id="next">
-					>
-				</button>
-			</div>
-			{# </carousel> #}
+			<
+		</button>
+		<button class="button5" id="next">
+			>
+		</button>
+	</div>
+	{# </carousel> #}
 
 
-			<main class="mainIndexBackground">
-				{% for movie in movies %}
-					{# <card> #}
-					<div class="mainIndexCenterCard">
-						<div class="card mb-3">
-							<div class="row g-0">
-								<div class="col-md-4">
-									<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image">
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
-											<h5 class="card-title">{{ movie.titleMovie }}</h5>
-										</a>
-										<p class="card-text">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
-										<p class="card-text">
-											<small class="text-muted">Last updated 3 mins ago</small>
-										</p>
+	<section class="mainIndexBackground">
 
-										<table>
+		{% for movie in movies %}
+			{# <card> #}
+			<div class="mainIndexCenterCard">
+				<div class="card mb-3">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
+									<h5 class="card-title">{{ movie.titleMovie }}</h5>
+								</a>
+								<p class="card-text">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
+								<p class="card-text">
+									<small class="text-muted">Last updated 3 mins ago</small>
+								</p>
 
-											<thead>
-												<th>Visions</th>
-												<th>Horaires</th>
-												<th>Salons</th>
-											</thead>
+								<table>
 
-
-											{% for session in sessions %}
-												<tr>
-													{% if session.idmovie.id == movie.id %}
-														<td>{{session.dateSession|date('d-m')}}</td>
-														<td>{{session.dateSession|date('H:i')}}</td>
-														<td>{{session.halls.nameHall}}</td>
-													{% endif %}
-												</tr>
-											{% endfor %}
+									<thead>
+										<th>Visions</th>
+										<th>Horaires</th>
+										<th>Salons</th>
+									</thead>
 
 
-										</table>
+									{% for session in sessions %}
+										<tr>
+											{% if session.idmovie.id == movie.id %}
+												<td>{{session.dateSession|date('d-m')}}</td>
+												<td>{{session.dateSession|date('H:i')}}</td>
+												<td>{{session.halls.nameHall}}</td>
+											{% endif %}
+										</tr>
+									{% endfor %}
 
-									</div>
-								</div>
+								</table>
+
 							</div>
 						</div>
-
 					</div>
-					{# </card> #}
-				{% endfor %}
-			</main>
+				</div>
 
-		{% endblock %}
+			</div>
+			{# </card> #}
+		{% endfor %}
+
+	</section>
+<div class="resetWhiteRight">
+<a href="#"><i class="fa-solid fa-arrow-up resetWhite"></i></a>
+</div>
+</main>
+{% endblock %}

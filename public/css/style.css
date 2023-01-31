@@ -123,15 +123,6 @@ h1, h2, h3, h4, h5, a {
   opacity: 0.6;
 }
 
-.mainIndexBackground {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 15%, rgb(34, 86, 255) 45%, rgb(34, 86, 255) 55%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%);
-}
-
 #carousel {
   position: relative;
   height: 25em;
@@ -230,6 +221,12 @@ h1, h2, h3, h4, h5, a {
   border-radius: 50%;
 }
 
+.mainIndexBackground {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .mainIndexCenterCard {
   min-height: 1em;
   max-width: 50em;
@@ -243,6 +240,25 @@ table {
 
 td, th {
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .mainIndexCenterCard {
+    min-height: 1em;
+    max-width: 30em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
+.resetWhiteRight {
+  display: flex;
+  justify-content: end;
+}
+
+.resetWhite {
+  color: rgb(255, 255, 255);
+  font-size: 3em;
+  padding: 0.7em;
 }
 
 .newIndexBlockTopBot {
