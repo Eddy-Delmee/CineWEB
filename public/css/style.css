@@ -298,7 +298,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   text-align: center;
 }
 
@@ -322,6 +323,16 @@ td, th {
   padding: 0.7em;
 }
 
+@media (max-width: 1070px) {
+  .resetWhiteRight {
+    height: 0px;
+    width: 0px;
+  }
+  .resetWhite {
+    height: 0px;
+    width: 0px;
+  }
+}
 .formColor {
   color: rgb(255, 255, 255) !important;
 }

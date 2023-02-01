@@ -26,7 +26,8 @@
 		href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap" rel="stylesheet">
 
 		{# CSS #}
-		<link rel="stylesheet" href="{{asset("css/style.css")}}">
+		<link
+		rel="stylesheet" href="{{asset("css/style.css")}}">
 
 		{# Icon #}
 		<script src="https://kit.fontawesome.com/564a2c56dc.js" crossorigin="anonymous"></script>
@@ -34,20 +35,21 @@
 		{# FontFamilly #}
 
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-			{% block stylesheets %}
-		{{ encore_entry_link_tags('app') }}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
-			{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
 	</head>
 
-		<body>
+	<body>
 
 		{# <Header Visitor> #}
 
-			<nav class="navbar navbar-expand-lg bg-light"> <div class="container-fluid">
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container-fluid">
 				<a class="navbar-brand" href="{{ path('app_main') }}">
 					<img src="{{asset('resource/LogoProjet.png')}}" alt="Logo" width="45" height="24" class="d-inline-block align-text-top">
 					CINEWEB
@@ -117,119 +119,117 @@
 		{# <Header Admin> #}
 
 		{# {% if is_granted('ROLE_ADMIN') %}
-			<nav class="navbar bg-light fixed-top">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="#">Offcanvas navbar</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-						<div class="offcanvas-header">
-							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-						</div>
-						<div class="offcanvas-body">
-							<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="#">Home</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Link</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Dropdown
-									</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a class="dropdown-item" href="#">Action</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">Another action</a>
-										</li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">Something else here</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<form class="d-flex mt-3" role="search">
-								<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-								<button class="btn btn-outline-success" type="submit">Search</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</nav>
-		{% endif %} #}
+							<nav class="navbar bg-light fixed-top">
+								<div class="container-fluid">
+									<a class="navbar-brand" href="#">Offcanvas navbar</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+										<span class="navbar-toggler-icon"></span>
+									</button>
+									<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+										<div class="offcanvas-header">
+											<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+										</div>
+										<div class="offcanvas-body">
+											<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+												<li class="nav-item">
+													<a class="nav-link active" aria-current="page" href="#">Home</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" href="#">Link</a>
+												</li>
+												<li class="nav-item dropdown">
+													<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+														Dropdown
+													</a>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="dropdown-item" href="#">Action</a>
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Another action</a>
+														</li>
+														<li>
+															<hr class="dropdown-divider">
+														</li>
+														<li>
+															<a class="dropdown-item" href="#">Something else here</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+											<form class="d-flex mt-3" role="search">
+												<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+												<button class="btn btn-outline-success" type="submit">Search</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</nav>
+						{% endif %} #}
 
 		{# </Header Admin> #}
 
-		<div class="heightMin">
-		{% block body %}{% endblock %}
-		</div>
+			<div class="heightMin">{% block body %}{% endblock %} </div>
 
-		{# <Footer> #}
-		<div class="footer-clean">
-			<footer>
-				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-sm-4 col-md-3 item">
-							<h3>Services</h3>
-							<ul>
-								<li><a href="#">Web design</a></li>
-								<li><a href="#">Development</a></li>
-								<li><a href="#">Hosting</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-3 item">
-							<h3>About</h3>
-							<ul>
-								<li><a href="#">Company</a></li>
-								<li><a href="#">Team</a></li>
-								<li><a href="#">Legacy</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-4 col-md-3 item">
-							<h3>Careers</h3>
-							<ul>
-								<li><a href="#">Job openings</a></li>
-								<li><a href="#">Employee success</a></li>
-								<li><a href="#">Benefits</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-3 item social">
-							<a href="#">
-								<i class="icon ion-social-facebook"></i>
-							</a>
-							<a href="#">
-								<i class="icon ion-social-twitter"></i>
-							</a>
-							<a href="#">
-								<i class="icon ion-social-snapchat"></i>
-							</a>
-							<a href="#">
-								<i class="icon ion-social-instagram"></i>
-							</a>
-							<p class="copyright">CINEWEB © 2022</p>
+			{# <Footer> #}
+			<div class="footer-clean">
+				<footer>
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-sm-4 col-md-3 item">
+								<h3>Services</h3>
+								<ul>
+									<li><a href="#">Web design</a></li>
+									<li><a href="#">Development</a></li>
+									<li><a href="#">Hosting</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-4 col-md-3 item">
+								<h3>About</h3>
+								<ul>
+									<li><a href="#">Company</a></li>
+									<li><a href="#">Team</a></li>
+									<li><a href="#">Legacy</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-4 col-md-3 item">
+								<h3>Careers</h3>
+								<ul>
+									<li><a href="#">Job openings</a></li>
+									<li><a href="#">Employee success</a></li>
+									<li><a href="#">Benefits</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-3 item social">
+								<a href="#">
+									<i class="icon ion-social-facebook"></i>
+								</a>
+								<a href="#">
+									<i class="icon ion-social-twitter"></i>
+								</a>
+								<a href="#">
+									<i class="icon ion-social-snapchat"></i>
+								</a>
+								<a href="#">
+									<i class="icon ion-social-instagram"></i>
+								</a>
+								<p class="copyright">CINEWEB © 2022</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</footer>
-		</div>
-		{# </Footer> #}
+				</footer>
+			</div>
+			{# </Footer> #}
 
-		{# Footer/script #}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+			{# Footer/script #}
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
-		{# bootstrap #}
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+			{# bootstrap #}
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-		{# JS #}
-		<script src="{{asset("js/main.js")}}">
-	</body>
-</html>
+			{# JS #}
+			<script src="{{asset("js/main.js")}}"></body>
+		</body>
+	</html>

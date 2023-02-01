@@ -1,105 +1,107 @@
+// <main.mainIdex.scss>
 // <carousel>
 #carousel {
-    position: relative;
-    height: 25em;
-    top: 50%;
-    transform: translateY(2%);
-    overflow: hidden;
-  }
+  position: relative;
+  height: 25em;
+  top: 50%;
+  transform: translateY(2%);
+  overflow: hidden;
+}
 
-  #carousel div {
-    position: absolute;
-    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
-    opacity: 1;
-  }
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+}
 
-  #carousel div img {
-    width: 16em;
-    transition: width 1s;
-  }
+#carousel div img {
+  width: 16em;
+  transition: width 1s;
+}
 
-  #carousel div img:hover {
-    width: 17.8em;
-    transition: width 0.3s;
-    position: relative;
-  }
+#carousel div img:hover {
+  width: 17.8em;
+  transition: width 0.3s;
+  position: relative;
+}
 
-  #carousel div.hideLeft {
-    left: 0%;
-    opacity: 0;
-    transform: translateY(50%) translateX(-50%);
-  }
+#carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
 
-  #carousel div.hideLeft img {
-    width: 30px;
-  }
+#carousel div.hideLeft img {
+  width: 30px;
+}
 
-  #carousel div.hideRight {
-    left: 100%;
-    opacity: 0;
-    transform: translateY(50%) translateX(-50%);
-  }
+#carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  transform: translateY(50%) translateX(-50%);
+}
 
-  #carousel div.hideRight img {
-    width: 2em;
-    transition: width 1s;
-  }
+#carousel div.hideRight img {
+  width: 2em;
+  transition: width 1s;
+}
 
-  #carousel div.prev {
-    z-index: 5;
-    left: 30%;
-    transform: translateY(50px) translateX(-50%);
-  }
+#carousel div.prev {
+  z-index: 5;
+  left: 30%;
+  transform: translateY(50px) translateX(-50%);
+}
 
-  #carousel div.prev img {
-    width: 13em;
-  }
+#carousel div.prev img {
+  width: 13em;
+}
 
-  #carousel div.prevLeftSecond {
-    z-index: 4;
-    left: 15%;
-    transform: translateY(50%) translateX(-50%);
-    opacity: 0.7;
-  }
+#carousel div.prevLeftSecond {
+  z-index: 4;
+  left: 15%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
 
-  #carousel div.prevLeftSecond img {
-    width: 8em;
-  }
+#carousel div.prevLeftSecond img {
+  width: 8em;
+}
 
-  #carousel div.selected {
-    z-index: 10;
-    left: 50%;
-    transform: translateY(0px) translateX(-50%);
-  }
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%);
+}
 
-  #carousel div.next {
-    z-index: 5;
-    left: 70%;
-    transform: translateY(50px) translateX(-50%);
-  }
+#carousel div.next {
+  z-index: 5;
+  left: 70%;
+  transform: translateY(50px) translateX(-50%);
+}
 
-  #carousel div.next img {
-    width: 13em;
-  }
+#carousel div.next img {
+  width: 13em;
+}
 
-  #carousel div.nextRightSecond {
-    z-index: 4;
-    left: 85%;
-    transform: translateY(50%) translateX(-50%);
-    opacity: 0.7;
-  }
+#carousel div.nextRightSecond {
+  z-index: 4;
+  left: 85%;
+  transform: translateY(50%) translateX(-50%);
+  opacity: 0.7;
+}
 
-  #carousel div.nextRightSecond img {
-    width: 8em;
-  }
+#carousel div.nextRightSecond img {
+  width: 8em;
+}
 
-  .button5 {
-    border-radius: 50%;
-  }
-  .button5:hover {
-    border-radius: 50%;
-    background-color: rgb(255, 221, 0);
-  }
+.button5 {
+  border-radius: 50%;
+}
+
+.button5:hover {
+  border-radius: 50%;
+  background-color: rgb(255, 221, 0);
+}
 // </carousel>
 
 
@@ -111,18 +113,19 @@
 }
 
 .mainIndexCenterCard {
-    min-height: 1em;
-    max-width: 50em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+  min-height: 1em;
+  max-width: 50em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
-td, th {
-    text-align: center;
+td,
+th {
+  text-align: center;
 }
 
 @media (max-width:767px) {
@@ -131,24 +134,33 @@ td, th {
     max-width: 30em;
     padding-top: 2em;
     padding-bottom: 2em;
-}
   }
+}
 // </card>
 
 // <Arrow-up>
 .resetWhiteRight {
-  // display: flex;
-  // justify-content: end;
   position: fixed;
-    bottom: 50px;
-    right: 50px;
+  bottom: 50px;
+  right: 50px;
 }
 
 .resetWhite {
   color: rgb(255, 255, 255);
-  // position: fixed;
-  // position: absolute;
   font-size: 3em;
   padding: 0.7em;
 }
+
+@media (max-width:1070px) {
+  .resetWhiteRight {
+    height: 0px;
+    width: 0px;
+  }
+
+  .resetWhite {
+    height: 0px;
+    width: 0px;
+  }
+}
 // </Arrow-up>
+// </main.mainIdex.scss>
