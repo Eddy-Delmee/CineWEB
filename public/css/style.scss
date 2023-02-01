@@ -1,36 +1,24 @@
-// base
-@import 'variable';
-
-
-
 // news
 @import 'news/newIndex';
 @import 'news/editIndex';
 @import 'news/showIndex';
 
-// Movies
-@import 'movies/formIndex';
 // __________________________________
-// <main>
+// <base>
+@import 'variable';
+// </base>
+
+
+// <main.main>
 @import 'main/mainIndex';
-// </main>
+// </main.main>
 
 
-// <Forms>
-@import 'forms/formMovie';
-@import 'forms/formNew';
-@import 'forms/formCategorie';
-@import 'forms/formHall';
-@import 'forms/formRecommendation';
-@import 'forms/formSession';
-// </Forms>
+// <forms.form.scss>
+@import 'forms/form';
+// </forms.form.scss>
 
 
-// <News>
-@import 'news/newMovie';
-@import 'news/newNew';
-@import 'news/newCategorie';
-@import 'news/newHall';
-@import 'news/newRecommendation';
-@import 'news/newSession';
-// </News>
+// <news.new.scss>
+@import 'news/new';
+// </news.new.scss>

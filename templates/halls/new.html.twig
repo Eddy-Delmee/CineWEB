@@ -5,11 +5,13 @@
 
 {% block body %}
 
-	<main class="backgoundEdit">
 
-		<h1 class="text-center backgroundShow">Créations salons</h1>
+	{# <news.new.scss> #}
+	<main class="backgroundNew">
 
-		<section class="backgroundShow formMargin">
+		<h1 class="text-center backgroundNew">Créations salons</h1>
+
+		<section class="backgroundNew marginNew">
 
 			{{ include('halls/_form.html.twig') }}
 
@@ -22,5 +24,7 @@
 		</section>
 
 	</main>
+	{# </news.new.scss> #}
+
 
 {% endblock %}

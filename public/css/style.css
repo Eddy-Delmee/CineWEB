@@ -1,3 +1,67 @@
+.newIndexBlockTopBot {
+  margin: 0;
+  background-color: rgb(55, 59, 62);
+}
+
+.newIndexColorWhite {
+  color: white;
+}
+
+.newIndexCreat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 2em;
+}
+
+.newIndexCenterBlock {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  font-size: 2em;
+}
+
+.newIndexCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newIndexCenterLeft {
+  margin-right: 4em;
+}
+
+.newIndexColor {
+  color: rgb(255, 255, 255);
+}
+
+.newIndexCenterRight {
+  margin-left: 4em;
+}
+
+.newIndexCenterRightText {
+  width: 30em;
+  font-size: 2em;
+}
+
+.newFrontbackgroundVisitor {
+  padding-top: 1em;
+  padding-bottom: 3em;
+  background: rgb(55, 59, 62);
+  background: linear-gradient(0deg, rgb(55, 59, 62) 0%, rgb(55, 59, 62) 98%, rgb(0, 0, 0) 99%, rgb(55, 59, 62) 100%);
+}
+
+.backgoundEdit {
+  background-color: rgb(55, 59, 62);
+  padding: 1em;
+}
+
+.backgroundShow {
+  background-color: rgb(55, 59, 62);
+  padding: 1em;
+}
+
 h1 {
   color: rgb(255, 221, 0);
 }
@@ -112,70 +176,6 @@ h1, h2, h3, h4, h5, a {
   margin-bottom: 0;
   font-size: 13px;
   opacity: 0.6;
-}
-
-.newIndexBlockTopBot {
-  margin: 0;
-  background-color: rgb(55, 59, 62);
-}
-
-.newIndexColorWhite {
-  color: white;
-}
-
-.newIndexCreat {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  font-size: 2em;
-}
-
-.newIndexCenterBlock {
-  padding-top: 3em;
-  padding-bottom: 3em;
-  font-size: 2em;
-}
-
-.newIndexCenter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.newIndexCenterLeft {
-  margin-right: 4em;
-}
-
-.newIndexColor {
-  color: rgb(255, 255, 255);
-}
-
-.newIndexCenterRight {
-  margin-left: 4em;
-}
-
-.newIndexCenterRightText {
-  width: 30em;
-  font-size: 2em;
-}
-
-.newFrontbackgroundVisitor {
-  padding-top: 1em;
-  padding-bottom: 3em;
-  background: rgb(55, 59, 62);
-  background: linear-gradient(0deg, rgb(55, 59, 62) 0%, rgb(55, 59, 62) 98%, rgb(0, 0, 0) 99%, rgb(55, 59, 62) 100%);
-}
-
-.backgoundEdit {
-  background-color: rgb(55, 59, 62);
-  padding: 1em;
-}
-
-.backgroundShow {
-  background-color: rgb(55, 59, 62);
-  padding: 1em;
 }
 
 #carousel {
@@ -322,7 +322,7 @@ td, th {
   padding: 0.7em;
 }
 
-.formMovieColor {
+.formColor {
   color: rgb(255, 255, 255) !important;
 }
 
@@ -331,56 +331,12 @@ td, th {
   margin-right: 5em;
 }
 
-.formNewColor {
-  color: rgb(255, 255, 255) !important;
+.backgroundNew {
+  background-color: rgb(55, 59, 62);
+  padding: 1em;
 }
 
-.formMargin {
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
-.formCategorieColor {
-  color: rgb(255, 255, 255) !important;
-}
-
-.formMargin {
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
-.formHallColor {
-  color: rgb(255, 255, 255) !important;
-}
-
-.formMargin {
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
-.formCategorieColor {
-  color: rgb(255, 255, 255) !important;
-}
-
-.formMargin {
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
-.formRecommendationColor {
-  color: rgb(255, 255, 255) !important;
-}
-
-.formMargin {
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
-.formSessionColor {
-  color: rgb(255, 255, 255) !important;
-}
-
-.formMargin {
+.marginNew {
   margin-left: 5em;
   margin-right: 5em;
 }/*# sourceMappingURL=style.css.map */
