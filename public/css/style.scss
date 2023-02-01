@@ -1,8 +1,7 @@
 // base
 @import 'variable';
 
-// main
-@import 'main/mainIndex';
+
 
 // news
 @import 'news/newIndex';
@@ -10,5 +9,28 @@
 @import 'news/showIndex';
 
 // Movies
-
 @import 'movies/formIndex';
+// __________________________________
+// <main>
+@import 'main/mainIndex';
+// </main>
+
+
+// <Forms>
+@import 'forms/formMovie';
+@import 'forms/formNew';
+@import 'forms/formCategorie';
+@import 'forms/formHall';
+@import 'forms/formRecommendation';
+@import 'forms/formSession';
+// </Forms>
+
+
+// <News>
+@import 'news/newMovie';
+@import 'news/newNew';
+@import 'news/newCategorie';
+@import 'news/newHall';
+@import 'news/newRecommendation';
+@import 'news/newSession';
+// </News>

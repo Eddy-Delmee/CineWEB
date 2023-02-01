@@ -10,15 +10,6 @@ h3 {
   height: 73vh;
 }
 
-.formcolor {
-  color: rgb(255, 255, 255) !important;
-}
-
-.formMargin {
-  margin-left: 5em;
-  margin-right: 5em;
-}
-
 h1, h2, h3, h4, h5, a {
   font-family: "Oleo Script", cursive;
   text-decoration: none !important;
@@ -121,6 +112,70 @@ h1, h2, h3, h4, h5, a {
   margin-bottom: 0;
   font-size: 13px;
   opacity: 0.6;
+}
+
+.newIndexBlockTopBot {
+  margin: 0;
+  background-color: rgb(55, 59, 62);
+}
+
+.newIndexColorWhite {
+  color: white;
+}
+
+.newIndexCreat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 2em;
+}
+
+.newIndexCenterBlock {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  font-size: 2em;
+}
+
+.newIndexCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newIndexCenterLeft {
+  margin-right: 4em;
+}
+
+.newIndexColor {
+  color: rgb(255, 255, 255);
+}
+
+.newIndexCenterRight {
+  margin-left: 4em;
+}
+
+.newIndexCenterRightText {
+  width: 30em;
+  font-size: 2em;
+}
+
+.newFrontbackgroundVisitor {
+  padding-top: 1em;
+  padding-bottom: 3em;
+  background: rgb(55, 59, 62);
+  background: linear-gradient(0deg, rgb(55, 59, 62) 0%, rgb(55, 59, 62) 98%, rgb(0, 0, 0) 99%, rgb(55, 59, 62) 100%);
+}
+
+.backgoundEdit {
+  background-color: rgb(55, 59, 62);
+  padding: 1em;
+}
+
+.backgroundShow {
+  background-color: rgb(55, 59, 62);
+  padding: 1em;
 }
 
 #carousel {
@@ -256,8 +311,9 @@ td, th {
   }
 }
 .resetWhiteRight {
-  display: flex;
-  justify-content: end;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
 }
 
 .resetWhite {
@@ -266,66 +322,65 @@ td, th {
   padding: 0.7em;
 }
 
-.newIndexBlockTopBot {
-  margin: 0;
-  background-color: rgb(55, 59, 62);
+.formMovieColor {
+  color: rgb(255, 255, 255) !important;
 }
 
-.newIndexColorWhite {
-  color: white;
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
-.newIndexCreat {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  font-size: 2em;
+.formNewColor {
+  color: rgb(255, 255, 255) !important;
 }
 
-.newIndexCenterBlock {
-  padding-top: 3em;
-  padding-bottom: 3em;
-  font-size: 2em;
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
-.newIndexCenter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.formCategorieColor {
+  color: rgb(255, 255, 255) !important;
 }
 
-.newIndexCenterLeft {
-  margin-right: 4em;
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
-.newIndexColor {
-  color: rgb(255, 255, 255);
+.formHallColor {
+  color: rgb(255, 255, 255) !important;
 }
 
-.newIndexCenterRight {
-  margin-left: 4em;
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
-.newIndexCenterRightText {
-  width: 30em;
-  font-size: 2em;
+.formCategorieColor {
+  color: rgb(255, 255, 255) !important;
 }
 
-.newFrontbackgroundVisitor {
-  padding-top: 1em;
-  padding-bottom: 3em;
-  background: rgb(55, 59, 62);
-  background: linear-gradient(0deg, rgb(55, 59, 62) 0%, rgb(55, 59, 62) 98%, rgb(0, 0, 0) 99%, rgb(55, 59, 62) 100%);
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
-.backgoundEdit {
-  background-color: rgb(55, 59, 62);
-  padding: 1em;
+.formRecommendationColor {
+  color: rgb(255, 255, 255) !important;
 }
 
-.backgroundShow {
-  background-color: rgb(55, 59, 62);
-  padding: 1em;
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+.formSessionColor {
+  color: rgb(255, 255, 255) !important;
+}
+
+.formMargin {
+  margin-left: 5em;
+  margin-right: 5em;
 }/*# sourceMappingURL=style.css.map */

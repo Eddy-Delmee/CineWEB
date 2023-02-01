@@ -137,8 +137,11 @@ td, th {
 
 // <Arrow-up>
 .resetWhiteRight {
-  display: flex;
-  justify-content: end;
+  // display: flex;
+  // justify-content: end;
+  position: fixed;
+    bottom: 50px;
+    right: 50px;
 }
 
 .resetWhite {
@@ -148,4 +151,4 @@ td, th {
   font-size: 3em;
   padding: 0.7em;
 }
-// </Arrow-ups>
+// </Arrow-up>
