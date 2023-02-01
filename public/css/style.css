@@ -2,7 +2,7 @@ h1 {
   color: rgb(255, 221, 0);
 }
 
-h5 {
+h3 {
   color: rgb(34, 86, 255);
 }
 
@@ -11,7 +11,7 @@ h5 {
 }
 
 .formcolor {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .formMargin {
@@ -219,6 +219,11 @@ h1, h2, h3, h4, h5, a {
 
 .button5 {
   border-radius: 50%;
+}
+
+.button5:hover {
+  border-radius: 50%;
+  background-color: rgb(255, 221, 0);
 }
 
 .mainIndexBackground {

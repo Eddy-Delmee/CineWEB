@@ -96,6 +96,10 @@
   .button5 {
     border-radius: 50%;
   }
+  .button5:hover {
+    border-radius: 50%;
+    background-color: rgb(255, 221, 0);
+  }
 // </carousel>
 
 
@@ -131,7 +135,7 @@ td, th {
   }
 // </card>
 
-// <reset>
+// <Arrow-up>
 .resetWhiteRight {
   display: flex;
   justify-content: end;
@@ -140,7 +144,8 @@ td, th {
 .resetWhite {
   color: rgb(255, 255, 255);
   // position: fixed;
+  // position: absolute;
   font-size: 3em;
   padding: 0.7em;
 }
-// </reset>
+// </Arrow-ups>

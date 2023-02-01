@@ -1,21 +1,25 @@
-
+// <Police Color>
 h1 {
   color: rgb(255, 221, 0);
 }
 
-h5 {
+h3 {
   color: rgb(34, 86, 255);
 }
+// </Police Color>
 
+
+// <HeightBackground>
 .fixe {
   height: 73vh;
 }
+// </HeightBackground>
 
 
 
 // <form>
 .formcolor {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .formMargin {
@@ -23,6 +27,7 @@ h5 {
   margin-right: 5em;
 }
 // </form>
+
 
 // <FontFamilly>
 h1, h2, h3, h4, h5, a {
