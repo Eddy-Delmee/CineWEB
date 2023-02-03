@@ -4,53 +4,78 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="text-center backgroundShow">Films</h1>
+	<h1 class="text-center grey yellow">Films</h1>
 
-	<table class="table table-dark table-striped mb-2">
-		<tbody>
-			<tr>
-				<th>Id</th>
-				<td>{{ movie.id }}</td>
-			</tr>
-			<tr>
-				<th>TitleMovie</th>
-				<td>{{ movie.titleMovie }}</td>
-			</tr>
-			<tr>
-				<th>Director</th>
-				<td>{{ movie.director }}</td>
-			</tr>
-			<tr>
-				<th>Producer</th>
-				<td>{{ movie.producer }}</td>
-			</tr>
-			<tr>
-				<th>Actors</th>
-				<td>{{ movie.actors }}</td>
-			</tr>
-			<tr>
-				<th>TimeMovie</th>
-				<td>{{ movie.timeMovie }}</td>
-			</tr>
-			<tr>
-				<th>YearMovie</th>
-				<td>{{ movie.yearMovie }}</td>
-			</tr>
-			<tr>
-				<th>ImageMovie</th>
-				<td>{{ movie.imageMovie }}</td>
-			</tr>
-			<tr>
-				<th>VideoMovie</th>
-				<td>{{ movie.videoMovie }}</td>
-			</tr>
-			<tr>
-				<th>DescriptionMovie</th>
-				<td>{{ movie.descriptionMovie }}</td>
-			</tr>
-		</tbody>
-	</table>
-	<div class="text-center backgroundShow">
+	{# <table class="table table-dark table-striped mb-2">
+				<tbody>
+					<tr>
+						<th>Id</th>
+						<td>{{ movie.id }}</td>
+					</tr>
+					<tr>
+						<th>TitleMovie</th>
+						<td>{{ movie.titleMovie }}</td>
+					</tr>
+					<tr>
+						<th>Director</th>
+						<td>{{ movie.director }}</td>
+					</tr>
+					<tr>
+						<th>Producer</th>
+						<td>{{ movie.producer }}</td>
+					</tr>
+					<tr>
+						<th>Actors</th>
+						<td>{{ movie.actors }}</td>
+					</tr>
+					<tr>
+						<th>TimeMovie</th>
+						<td>{{ movie.timeMovie }}</td>
+					</tr>
+					<tr>
+						<th>YearMovie</th>
+						<td>{{ movie.yearMovie }}</td>
+					</tr>
+					<tr>
+						<th>ImageMovie</th>
+						<td>{{ movie.imageMovie }}</td>
+					</tr>
+					<tr>
+						<th>VideoMovie</th>
+						<td>{{ movie.videoMovie }}</td>
+					</tr>
+					<tr>
+						<th>DescriptionMovie</th>
+						<td>{{ movie.descriptionMovie }}</td>
+					</tr>
+				</tbody>
+			</table> #}
+	<section class="centermovie">
+		<div class="mainIndexCenterCard ">
+			<div class="card mb-3">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+
+							<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
+								<h3 class="card-title">{{ movie.titleMovie }}</h3>
+							</a>
+							<p class="card-text Roboto">{{ movie.shortDesciptionMovie}}</p>
+							<p class="card-text Roboto text-center">
+								<small class="text-muted">Last updated 3 mins ago</small>
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="text-center grey">
 		<a href="{{ path('app_main') }}" class="btn btn-light mb-3">Retour</a>
 
 		<a href="{{ path('app_movies_edit', {'id': movie.id}) }}" class="btn btn-success mb-3">Editer</a>

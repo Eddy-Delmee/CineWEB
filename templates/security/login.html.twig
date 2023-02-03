@@ -5,9 +5,9 @@
 
 {% block body %}
 
-	<section class="container my-3">
+	<section class="container centerMap">
 		<div class="row">
-			<div class="col">
+			<div class="col white">
 
 				<form method="post">
 					{% if error %}
@@ -22,7 +22,7 @@
 						</div>
 					{% endif %}
 
-					<h1 class="h3 mb-3 font-weight-normal">Me connecter</h1>
+					<h1 class="h3 mb-3 font-weight-normal yellow">Me connecter</h1>
 					<label for="inputEmail">Email</label>
 					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
 					<label for="inputPassword">Mot de passe</label>

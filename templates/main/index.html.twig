@@ -9,7 +9,7 @@
 
 		{# <main.mainIdex.scss> #}
 		{# <Title> #}
-			<h1 class="text-center mt-2"> Films du moment
+			<h1 class="text-center mt-2 yellow"> Films du moment
 		</h1>
 		{# </Title> #}
 
@@ -80,26 +80,25 @@
 									<a href="{{ path('app_movies_show', {'id': movie.id}) }}">
 										<h3 class="card-title">{{ movie.titleMovie }}</h3>
 									</a>
-									<p class="card-text">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
-									<p class="card-text">
+									<p class="card-text Roboto">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
+									<p class="card-text Roboto">
 										<small class="text-muted">Last updated 3 mins ago</small>
 									</p>
 
 									<table>
 
 										<thead>
-											<th>Visions</th>
-											<th>Horaires</th>
-											<th>Salons</th>
+											<th class="Roboto">Visions</th>
+											<th class="Roboto">Horaires</th>
+											<th class="Roboto">Salons</th>
 										</thead>
-
 
 										{% for session in sessions %}
 											<tr>
 												{% if session.idmovie.id == movie.id %}
-													<td>{{session.dateSession|date('d-m')}}</td>
-													<td>{{session.dateSession|date('H:i')}}</td>
-													<td>{{session.halls.nameHall}}</td>
+													<td class="Roboto">{{session.dateSession|date('d-m')}}</td>
+													<td class="Roboto">{{session.dateSession|date('H:i')}}</td>
+													<td class="Roboto">{{session.halls.nameHall}}</td>
 												{% endif %}
 											</tr>
 										{% endfor %}

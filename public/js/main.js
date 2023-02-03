@@ -1,3 +1,4 @@
+// <Carousel>
 function moveToSelected(element) {
 
     if (element == "next") {
@@ -53,4 +54,12 @@ function moveToSelected(element) {
   $('#next').click(function() {
     moveToSelected('next');
   });
+  // </Carousel>
+
+
+  // <Nav>
+  function myFunction(x) {
+    x.classList.toggle("change");
+  }
+    // </Nav>
   

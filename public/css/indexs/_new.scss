@@ -4,10 +4,6 @@
     background-color: rgba(55,59,62,1);
 }
 
-.newIndexColorWhite {
-    color: white;
-}
-
 .newIndexCreat {
     display: flex;
     flex-direction: row;
@@ -16,6 +12,7 @@
     padding-bottom: 2em;
     font-size: 2em;
 }
+
 .newIndexCenterBlock {
     padding-top: 3em;
     padding-bottom: 3em;
@@ -46,7 +43,7 @@
 
 .newIndexCenterRightText {
     width: 30em;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 // </block Right>
 
@@ -56,6 +53,5 @@
     padding-top: 1em;
     padding-bottom: 3em;
     background: rgba(55,59,62,1);
-    background: linear-gradient(0deg, rgba(55,59,62,1) 0%, rgba(55,59,62,1) 98%, rgba(0, 0, 0, 1) 99%, rgba(55,59,62,1) 100%);
 }
 // </VisitorBackground>

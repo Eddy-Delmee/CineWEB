@@ -5,9 +5,7 @@
 
 {% block body %}
 
-{# {{ dump(app.user.roles[0]) }} #}
-
-<h1 class="text-center backgroundShow">Actualités</h1>
+<h1 class="text-center grey yellow">Actualités</h1>
 
 {% for news in news %}
 
@@ -23,7 +21,7 @@
 			</br>
 		{% endif %}
 	</p>
-	<h2 class="text-center newIndexColor">{{ news.titleNew }}</h2>
+	<h2 class="text-center yellow">{{ news.titleNew }}</h2>
 	{# </title/show/edit> #}
 
 	{# <text/Image> #}
@@ -32,7 +30,7 @@
 			<img src="{{ asset('uploads/images/' ~ news.imageNew) }}" width="100%" height="auto">
 		</div>
 		<div class="newIndexCenterRight">
-			<p class="text-md-center newIndexCenterRightText">{{ news.descriptionNew }}</p>
+			<p class="white newIndexCenterRightText">{{ news.descriptionNew }}</p>
 		</div>
 	</div>
 </div>

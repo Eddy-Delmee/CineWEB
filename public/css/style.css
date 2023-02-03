@@ -1,73 +1,48 @@
-.newIndexBlockTopBot {
-  margin: 0;
-  background-color: rgb(55, 59, 62);
-}
-
-.newIndexColorWhite {
-  color: white;
-}
-
-.newIndexCreat {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  font-size: 2em;
-}
-
-.newIndexCenterBlock {
-  padding-top: 3em;
-  padding-bottom: 3em;
-  font-size: 2em;
-}
-
-.newIndexCenter {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.newIndexCenterLeft {
-  margin-right: 4em;
-}
-
-.newIndexColor {
-  color: rgb(255, 255, 255);
-}
-
-.newIndexCenterRight {
-  margin-left: 4em;
-}
-
-.newIndexCenterRightText {
-  width: 30em;
-  font-size: 2em;
-}
-
-.newFrontbackgroundVisitor {
-  padding-top: 1em;
-  padding-bottom: 3em;
-  background: rgb(55, 59, 62);
-  background: linear-gradient(0deg, rgb(55, 59, 62) 0%, rgb(55, 59, 62) 98%, rgb(0, 0, 0) 99%, rgb(55, 59, 62) 100%);
-}
-
-.backgoundEdit {
-  background-color: rgb(55, 59, 62);
-  padding: 1em;
-}
-
-.backgroundShow {
-  background-color: rgb(55, 59, 62);
-  padding: 1em;
-}
-
-h1 {
+.yellow {
   color: rgb(255, 221, 0);
 }
 
-h3 {
+.blue {
   color: rgb(34, 86, 255);
+}
+
+.newIndexColorWhite, .white {
+  color: rgb(255, 255, 255);
+}
+
+.backgroundShow, .grey {
+  background-color: rgb(55, 59, 62);
+  padding: 1em;
+}
+
+.margeBurger {
+  margin-right: 0.8em;
+}
+
+.containerNav {
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 50px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 1.8em;
+  height: 0.2em;
+  background-color: rgb(255, 255, 255);
+  margin: 0.25em;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 8px) rotate(-45deg);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: translate(0, -10px) rotate(45deg);
 }
 
 .fixe {
@@ -77,6 +52,11 @@ h3 {
 h1, h2, h3, h4, h5, a {
   font-family: "Oleo Script", cursive;
   text-decoration: none !important;
+}
+
+.Roboto {
+  font-family: "Oleo Script", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 .navbarColorBlack {
@@ -350,4 +330,63 @@ th {
 .marginNew {
   margin-left: 5em;
   margin-right: 5em;
+}
+
+.newIndexBlockTopBot {
+  margin: 0;
+  background-color: rgb(55, 59, 62);
+}
+
+.newIndexCreat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 2em;
+}
+
+.newIndexCenterBlock {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  font-size: 2em;
+}
+
+.newIndexCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.newIndexCenterLeft {
+  margin-right: 4em;
+}
+
+.newIndexColor {
+  color: rgb(255, 255, 255);
+}
+
+.newIndexCenterRight {
+  margin-left: 4em;
+}
+
+.newIndexCenterRightText {
+  width: 30em;
+  font-size: 1.5em;
+}
+
+.newFrontbackgroundVisitor {
+  padding-top: 1em;
+  padding-bottom: 3em;
+  background: rgb(55, 59, 62);
+}
+
+.centerMap {
+  padding-top: 20vh;
+}
+
+.centermovie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */
