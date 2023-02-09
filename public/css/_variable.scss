@@ -17,6 +17,21 @@
 }
 // </Police Color>
 
+// <FontFamilly>
+h1, h2, h3, h4, h5, a {
+  font-family: 'Oleo Script', cursive;
+  text-decoration: none !important;
+}
+.Roboto {
+font-family: 'Oleo Script', cursive;
+font-family: 'Roboto', sans-serif;
+}
+// </FontFamilly>
+
+a:hover {
+  color: yellow;
+}
+
 // <navBars>
 .margeBurger {
   margin-right: 0.8em;
@@ -53,18 +68,6 @@
   height: 73vh;
 }
 // </HeightBackground>
-
-
-// <FontFamilly>
-h1, h2, h3, h4, h5, a {
-  font-family: 'Oleo Script', cursive;
-  text-decoration: none !important;
-}
-.Roboto {
-font-family: 'Oleo Script', cursive;
-font-family: 'Roboto', sans-serif;
-}
-// </FontFamilly>
 
 // <Header>
 .navbarColorBlack {

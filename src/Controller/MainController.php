@@ -20,4 +20,14 @@ class MainController extends AbstractController
             'sessions' => $sessionsRepository->findByDate(),
         ]);
     }
+    #[Route('/politique-de-confidentialite', name: 'privacy_policy')]
+    public function privacyPolicyAction()
+    {
+        return $this->render('main/privacy_policy.html.twig');
+    }
+    #[Route('/mention-legal', name: 'legal_notice')]
+    public function legalnoticeAction()
+    {
+        return $this->render('main/legal_notice.html.twig');
+    }
 }
