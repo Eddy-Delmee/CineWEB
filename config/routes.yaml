@@ -1,3 +1,6 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+youtube_video:
+    path: /video/{id}
+    controller: App\Controller\VideoController::show

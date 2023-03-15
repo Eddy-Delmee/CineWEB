@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 #[Route('/movies')]
-#[IsGranted('ROLE_ADMIN')]
 class MoviesController extends AbstractController
 {
     #[Route('/', name: 'app_movies_index', methods: ['GET'])]

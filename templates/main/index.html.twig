@@ -52,10 +52,10 @@
 			</div>
 
 			<div class="text-center mt-2">
-				<button class="button5" id="prev" alt="Boutton gauche">
+				<button class="button5" id="prev" aria-labelledby="Boutton gauche">
 					<i class="fa-solid fa-arrow-left"></i>
 				</button>
-				<button class="button5" id="next" alt="Boutton droite">
+				<button class="button5" id="next" aria-labelledby="Boutton droite">
 					<i class="fa-solid fa-arrow-right"></i>
 				</button>
 			</div>
@@ -72,8 +72,8 @@
 				<div class="mainIndexCenterCard">
 					<div class="card mb-3">
 						<div class="row g-0">
-							<div class="col-md-4">
-								<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image">
+							<div class="col-md-4"><a href="{{ path('app_movies_show', {'id': movie.id}) }}">
+								<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image"></a>
 							</div>
 							<div class="col-md-8">
 								<div class="card-body">
@@ -82,7 +82,7 @@
 									</a>
 									<p class="card-text Roboto">{{ movie.shortDesciptionMovie|slice(0, 200) ~ '...' }}</p>
 									<p class="card-text Roboto">
-										<small class="text-muted">Last updated 3 mins ago</small>
+										<a href="{{ movie.videoMovie }}" target="_blank" rel="noopener noreferrer"><small class="btn btn-success mb-3">Voir  la bande annonce</small></a>
 									</p>
 
 									<table>
