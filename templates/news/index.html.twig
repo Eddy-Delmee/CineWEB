@@ -9,33 +9,32 @@
 
 {% for news in news %}
 
-	{# <title/show/edit> #}
-	<div class="newFrontbackgroundVisitor">
-		<p class="text-center newIndexCenterBlock newIndexColorWhite">
+	<section class="newFrontbackgroundVisitor">
 
+		<div class="text-center">
 			{% if is_granted('ROLE_ADMIN') %}
-				ID:
-				{{ news.id }}
+				<p class="white text-center">ID:
+					{{ news.id }}</p>
 				<a href="{{ path('app_news_show', {'id': news.id}) }}" class="btn btn-light">Afficher</a>
 				<a href="{{ path('app_news_edit', {'id': news.id}) }}" class="btn btn-light">Modifier</a>
 			</br>
 		{% endif %}
-	</p>
-	<h2 class="text-center yellow">{{ news.titleNew }}</h2>
-	{# </title/show/edit> #}
+		<h2 class="yellow">
+			{{ news.titleNew }}
+		</h2>
+	</div>
 
-	{# <text/Image> #}
-	<div class="newIndexCenter">
-		<div class="newIndexCenterLeft">
+	<div class="ixdexNormal">
+		<div class="text">
+			<p class="white Roboto">{{ news.descriptionNew }}</p>
+		</div>
+
+		<div class="image">
 			<img src="{{ asset('uploads/images/' ~ news.imageNew) }}" width="100%" height="auto">
 		</div>
-		<div class="newIndexCenterRight">
-			<p class="white newIndexCenterRightText">{{ news.descriptionNew }}</p>
-		</div>
 	</div>
-</div>
-{# </text/Image> #}
-{% endfor %}{% if is_granted('ROLE_ADMIN') %}
+
+</section>{% endfor %}{% if is_granted('ROLE_ADMIN') %}
 
 <div class="newIndexBlockTopBot">
 	<a class="newIndexCreat newIndexColor" href="{{ path('app_news_new') }}">Créer Nouveau</a>
