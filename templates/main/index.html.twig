@@ -20,15 +20,21 @@
 			<div id="carousel">
 
 				<div class="hideLeft">
-					<img src="{{ asset('uploads/images/' ~ movieCarousel[6].imageMovie) }}" alt="image">
+					<a href="{{ path('app_movies_show', {'id': movieCarousel[6].id}) }}">
+						<img src="{{ asset('uploads/images/' ~ movieCarousel[6].imageMovie) }}" alt="image">
+					</a>
 				</div>
 
 				<div class="prevLeftSecond">
-					<img src="{{ asset('uploads/images/' ~ movieCarousel[4].imageMovie) }}" alt="image">
+					<a href="{{ path('app_movies_show', {'id': movieCarousel[4].id}) }}">
+						<img src="{{ asset('uploads/images/' ~ movieCarousel[4].imageMovie) }}" alt="image">
+					</a>
 				</div>
 
 				<div class="prev">
-					<img src="{{ asset('uploads/images/' ~ movieCarousel[2].imageMovie) }}" alt="image">
+					<a href="{{ path('app_movies_show', {'id': movieCarousel[2].id}) }}">
+						<img src="{{ asset('uploads/images/' ~ movieCarousel[2].imageMovie) }}" alt="image">
+					</a>
 				</div>
 
 				<div class="selected">
@@ -38,15 +44,21 @@
 				</div>
 
 				<div class="next">
-					<img src="{{ asset('uploads/images/' ~ movieCarousel[1].imageMovie) }}" alt="image">
+					<a href="{{ path('app_movies_show', {'id': movieCarousel[1].id}) }}">
+						<img src="{{ asset('uploads/images/' ~ movieCarousel[1].imageMovie) }}" alt="image">
+					</a>
 				</div>
 
 				<div class="nextRightSecond">
-					<img src="{{ asset('uploads/images/' ~ movieCarousel[3].imageMovie) }}" alt="image">
+					<a href="{{ path('app_movies_show', {'id': movieCarousel[3].id}) }}">
+						<img src="{{ asset('uploads/images/' ~ movieCarousel[3].imageMovie) }}" alt="image">
+					</a>
 				</div>
 
 				<div class="hideRight">
-					<img src="{{ asset('uploads/images/' ~ movieCarousel[5].imageMovie) }}" alt="image">
+					<a href="{{ path('app_movies_show', {'id': movieCarousel[5].id}) }}">
+						<img src="{{ asset('uploads/images/' ~ movieCarousel[5].imageMovie) }}" alt="image">
+					</a>
 				</div>
 
 			</div>

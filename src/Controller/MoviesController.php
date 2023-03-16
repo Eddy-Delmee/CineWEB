@@ -5,12 +5,13 @@ namespace App\Controller;
 use App\Entity\Movies;
 use App\Form\MoviesType;
 use App\Repository\MoviesRepository;
+use App\Repository\SessionsRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/movies')]
 class MoviesController extends AbstractController
@@ -59,10 +60,11 @@ class MoviesController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_movies_show', methods: ['GET'])]
-    public function show(Movies $movie): Response
+    public function show(Movies $movie, SessionsRepository $sessionsRepository): Response
     {
         return $this->render('movies/show.html.twig', [
             'movie' => $movie,
+            'sessions' => $sessionsRepository->findByDate(),
         ]);
     }
 
@@ -86,12 +88,11 @@ class MoviesController extends AbstractController
             $newFilename
             );
             $movie->setimageMovie($newFilename);
-            $moviesRepository->save($movie, true);
-
+        }
             $moviesRepository->save($movie, true);
 
             return $this->redirectToRoute('app_movies_index', [], Response::HTTP_SEE_OTHER);
-        }
+        
     }
 
         return $this->renderForm('movies/edit.html.twig', [
