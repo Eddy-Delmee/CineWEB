@@ -73,7 +73,7 @@
 					<div class="card mb-3">
 						<div class="row g-0">
 							<div class="col-md-4"><a href="{{ path('app_movies_show', {'id': movie.id}) }}">
-								<img src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image"></a>
+								<img loading="lazy" src="{{ asset('uploads/images/' ~ movie.imageMovie) }}" class="card-img-top" alt="image"></a>
 							</div>
 							<div class="col-md-8">
 								<div class="card-body">

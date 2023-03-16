@@ -23,7 +23,6 @@ h1, h2, h3, h4, h5, a {
   text-decoration: none !important;
 }
 .Roboto {
-font-family: 'Oleo Script', cursive;
 font-family: 'Roboto', sans-serif;
 }
 // </FontFamilly>
@@ -125,6 +124,17 @@ a:hover {
 .footer-clean .item.social {
   text-align: right;
 }
+@media (max-width:991px) {
+  .footer-clean .item.social>a {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item.social {
+    text-align: center;
+  }
+}
 
 @media (max-width:767px) {
   .footer-clean .item {
@@ -133,9 +143,9 @@ a:hover {
   }
 }
 
-@media (max-width: 768px) {
-  .footer-clean .item.social {
-    text-align: center;
+@media (max-width:767px) {
+  .footer-clean .item.social>a {
+    margin-top: 10px;
   }
 }
 
@@ -156,18 +166,6 @@ a:hover {
 
 .footer-clean .item.social>a:hover {
   opacity: 0.9;
-}
-
-@media (max-width:991px) {
-  .footer-clean .item.social>a {
-    margin-top: 40px;
-  }
-}
-
-@media (max-width:767px) {
-  .footer-clean .item.social>a {
-    margin-top: 10px;
-  }
 }
 
 .footer-clean .copyright {

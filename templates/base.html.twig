@@ -21,6 +21,7 @@
 		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
 		{# FontFamilly #}
+		{# Oleo Script #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
@@ -75,7 +76,7 @@
 
 	<body>
 
-		{# <Header Visitor> #}
+		{# <Header Visitor, User> #}
 
 		<nav class="navbar navbar-expand-lg bg-light">
 			<div class="container-fluid">
@@ -148,60 +149,88 @@
 			</div>
 		</nav>
 
-		{# </Header Visitor> #}
+		{# </Header Visitor, User> #}
 
 
 		{# <Header Admin> #}
 
-		{# {% if is_granted('ROLE_ADMIN') %}
-																					<nav class="navbar bg-light fixed-top">
-																						<div class="container-fluid">
-																							<a class="navbar-brand" href="#">Offcanvas navbar</a>
-																							<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-																								<span class="navbar-toggler-icon"></span>
-																							</button>
-																							<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-																								<div class="offcanvas-header">
-																									<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-																									<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-																								</div>
-																								<div class="offcanvas-body">
-																									<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-																										<li class="nav-item">
-																											<a class="nav-link active" aria-current="page" href="#">Home</a>
-																										</li>
-																										<li class="nav-item">
-																											<a class="nav-link" href="#">Link</a>
-																										</li>
-																										<li class="nav-item dropdown">
-																											<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-																												Dropdown
-																											</a>
-																											<ul class="dropdown-menu">
-																												<li>
-																													<a class="dropdown-item" href="#">Action</a>
-																												</li>
-																												<li>
-																													<a class="dropdown-item" href="#">Another action</a>
-																												</li>
-																												<li>
-																													<hr class="dropdown-divider">
-																												</li>
-																												<li>
-																													<a class="dropdown-item" href="#">Something else here</a>
-																												</li>
-																											</ul>
-																										</li>
-																									</ul>
-																									<form class="d-flex mt-3" role="search">
-																										<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-																										<button class="btn btn-outline-success" type="submit">Search</button>
-																									</form>
-																								</div>
-																							</div>
-																						</div>
-																					</nav>
-																				{% endif %} #}
+		{% if is_granted('ROLE_ADMIN') %}
+			<nav class="navbar bg-light fixed-top">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="{{ path('app_main') }}"><img src="{{asset('resource/LogoProjet.png')}}" alt="Logo" width="45" height="24" class="d-inline-block align-text-top">
+					CINEWEB
+				    </a>
+					<button class="navbar-toggler navbarColorBlack" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+						<span class="navbar-toggler-icon margeBurger">
+							<div class="containerNav" onclick="myFunction(this)">
+								<div class="bar1"></div>
+								<div class="bar2"></div>
+								<div class="bar3"></div>
+							</div>
+						</span>
+					</button>
+					<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">CINEWEB</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="{{ path('app_main') }}">Accueil</a>
+								</li>
+								<li class="nav-item">
+							<a class="nav-link" href="{{ path('app_news_index') }}">Actualités</a>
+						</li>
+
+						{% if is_granted('ROLE_ADMIN') %}
+
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_movies_index') }}">Films</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_recommendations_index') }}">Recommendations</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_categories_index') }}">Genres</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_halls_index') }}">Salles</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('app_sessions_index') }}">Horaires</a>
+							</li>
+
+						{% endif %}
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Mon compte
+							</a>
+							<ul class="dropdown-menu">
+
+								{% if app.user %}
+
+									<li>
+										<a class="dropdown-item" href="{{ path('app_logout') }}">Me déconnecter</a>
+									</li>
+
+								{% else %}
+
+									<li>
+										<a class="dropdown-item" href="{{ path('app_login') }}">Me connecter</a>
+									</li>
+
+								{% endif %}
+
+							</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		{% endif %}
 
 		{# </Header Admin> #}
 
@@ -215,15 +244,15 @@
 							<div class="col-sm-4 col-md-3 item">
 								<h3>Services</h3>
 								<ul>
-									<li><a href="#">Web design</a></li>
-									<li><a href="#">Développement</a></li>
-									<li><a href="#">O2SWITCH</a></li>
+									<li><a>Web design</a></li>
+									<li><a>Développement</a></li>
+									<li><a>O2SWITCH</a></li>
 								</ul>
 							</div>
 							<div class="col-sm-4 col-md-3 item">
 								<h3>Environnement</h3>
 								<ul>
-									<li><a href="#">Compagnie</a></li>
+									<li><a>Compagnie</a></li>
 									<li><a href="{{path('legal_notice')}}">Mention légal</a></li>
 									<li><a href="{{path('privacy_policy')}}">Politique</a></li>
 								</ul>
@@ -231,9 +260,9 @@
 							<div class="col-sm-4 col-md-3 item">
 								<h3>Développeur</h3>
 								<ul>
-									<li><a href="#">Delmée Eddy</a></li>
-									<li><a href="#">Stagiaire</a></li>
-									<li><a href="#">Entrainement</a></li>
+									<li><a>Delmée Eddy</a></li>
+									<li><a>Stagiaire</a></li>
+									<li><a>Entrainement</a></li>
 								</ul>
 							</div>
 							<div class="col-lg-3 item social">
@@ -242,12 +271,6 @@
 								</a>
 								<a href="#">
 									<i class="icon ion-social-twitter"></i>
-								</a>
-								<a href="#">
-									<i class="icon ion-social-snapchat"></i>
-								</a>
-								<a href="#">
-									<i class="icon ion-social-instagram"></i>
 								</a>
 								<p class="copyright">CINEWEB © 2022</p>
 							</div>
@@ -266,11 +289,13 @@
 
 			{# JS #}
 			<script src="{{asset("js/main.js")}}">
-
-				{# tarteaucitron #} < script type = "text/javascript" > tarteaucitron.user.gajsUa = 'G-4PFFJDTVGQ';
-			tarteaucitron.user.gajsMore = function () { /* add here your optionnal _ga.push() */
-			};
-			(tarteaucitron.job = tarteaucitron.job || []).push('gajs');
 			</script>
+
+
+			<script type="text/javascript">
+        tarteaucitron.user.gajsUa = 'G-4PFFJDTVGQ';
+        tarteaucitron.user.gajsMore = function () { /* add here your optionnal _ga.push() */ };
+        (tarteaucitron.job = tarteaucitron.job || []).push('gajs');
+        </script>
 		</body>
 	</html>
