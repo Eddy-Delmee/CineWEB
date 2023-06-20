@@ -3,7 +3,7 @@
 }
 
 .blue {
-  color: rgb(34, 86, 255);
+  color: rgb(0, 0, 255);
 }
 
 .newIndexColorWhite, .white {
@@ -76,7 +76,7 @@ a:hover {
   min-height: 73vh;
   margin: 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 15%, rgb(34, 86, 255) 45%, rgb(34, 86, 255) 55%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 15%, rgb(0, 0, 255) 45%, rgb(0, 0, 255) 55%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%);
 }
 
 .footer-clean {
@@ -302,11 +302,11 @@ th {
 
 .resetWhite {
   color: rgb(255, 255, 255);
-  font-size: 3em;
+  font-size: 2em;
   padding: 0.7em;
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1470px) {
   .resetWhiteRight {
     height: 0px;
     width: 0px;
